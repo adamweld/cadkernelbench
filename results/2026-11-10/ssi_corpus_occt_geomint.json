@@ -1,0 +1,4547 @@
+[
+ {
+  "id": "c1_cone_plane_ellipse",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 4.335354000431835,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 6.661338147750939e-16,
+  "max_dist_uv": 3.288709960956747e-07,
+  "coverage": [
+   {
+    "max": 3.832192762705568e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 3.832192762705568e-07,
+  "hausdorff_out_to_truth": 5.436058968218915e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1_cone_plane_hyperbola",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.6210660003489465,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 6.661338147750939e-16,
+  "max_dist_uv": 1.3320280858319933e-06,
+  "coverage": [
+   {
+    "max": 2.960481299785075e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 2.960481299785075e-08,
+  "hausdorff_out_to_truth": 2.339493936065083e-07,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1_cyl_cyl_two_loops",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 8.189625000341039,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.3615368771601197e-08,
+  "max_dist_uv": 2.7130329427471622e-08,
+  "coverage": [
+   {
+    "max": 1.2015870875756582e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 4.3974350269244365e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 4.3974350269244365e-07,
+  "hausdorff_out_to_truth": 4.2032991720937037e-07,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1_plane_cyl_ellipse",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5558200000450597,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.220446049250313e-16,
+  "max_dist_uv": 6.872950419016448e-08,
+  "coverage": [
+   {
+    "max": 2.5438405243138006e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 2.5438405243138006e-16,
+  "hausdorff_out_to_truth": 2.5438405243138006e-16,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1_plane_halfcyl_arc",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.6234219999896595,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.220446049250313e-16,
+  "max_dist_uv": 6.87293762900049e-08,
+  "coverage": [
+   {
+    "max": 1.951337588752514e-09,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.951337588752514e-09,
+  "hausdorff_out_to_truth": 6.853407154187315e-13,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1_plane_sphere_circle",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.47121599982347107,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.440892098500626e-16,
+  "max_dist_uv": 4.440892098500626e-16,
+  "coverage": [
+   {
+    "max": 3.1401849173675503e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 3.1401849173675503e-16,
+  "hausdorff_out_to_truth": 3.1401849173675503e-16,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1_sphere_cyl_two_loops",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 12.47839399957229,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.8080055836099405e-08,
+  "max_dist_uv": 4.35074049009998e-08,
+  "coverage": [
+   {
+    "max": 3.7854255385048693e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 3.7854255130265603e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 3.7854255385048693e-07,
+  "hausdorff_out_to_truth": 2.6623995393206343e-07,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1_torus_plane_nested",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5587509999713802,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 6.661338147750939e-16,
+  "max_dist_uv": 6.661338147750939e-16,
+  "coverage": [
+   {
+    "max": 6.280369834735101e-16,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 4.577566798522237e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 6.280369834735101e-16,
+  "hausdorff_out_to_truth": 6.280369834735101e-16,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1n_cylN_plane_ellipse",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 6.725594999807072,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.00455237858921e-08,
+  "max_dist_uv": 4.584469355536057e-07,
+  "coverage": [
+   {
+    "max": 4.2294495836120337e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 4.2294495836120337e-07,
+  "hausdorff_out_to_truth": 3.769692506875586e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1n_parab_parab_circle",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 20.457343999623845,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.224802262372655e-08,
+  "max_dist_uv": 8.449604604186407e-08,
+  "coverage": [
+   {
+    "max": 3.5113484896085565e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 3.5113484896085565e-07,
+  "hausdorff_out_to_truth": 3.3967066812642063e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1n_parab_plane_circle",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 4.879723000158265,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.0326948706984117e-08,
+  "max_dist_uv": 4.545243836862056e-08,
+  "coverage": [
+   {
+    "max": 5.089452592554669e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 5.089452592554669e-08,
+  "hausdorff_out_to_truth": 4.9379433033528036e-08,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1n_saddle_plane_hyperbola",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 4.462127000351757,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.6750304905127713e-08,
+  "max_dist_uv": 4.8152902110132345e-08,
+  "coverage": [
+   {
+    "max": 4.584022833551557e-08,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 4.5840226051347877e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 4.584022833551557e-08,
+  "hausdorff_out_to_truth": 5.320190837854236e-08,
+  "expected_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1n_sphereN_cylN_two_loops",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 73.13165999994453,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.9617178476957235e-08,
+  "max_dist_uv": 2.6506259698244605e-07,
+  "coverage": [
+   {
+    "max": 2.7972492454949355e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 2.796479771319992e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 2.7972492454949355e-07,
+  "hausdorff_out_to_truth": 2.9748853691833166e-07,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c1n_torusN_planeN_nested",
+  "class": "1 transversal",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 46.012601000256836,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.5131485265924596e-08,
+  "max_dist_uv": 5.513148915170518e-08,
+  "coverage": [
+   {
+    "max": 1.2363483270160992e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 1.9446982706486674e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.9446982706486674e-07,
+  "hausdorff_out_to_truth": 1.9399116926013074e-07,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c2_cones_tangent_ruling",
+  "class": "2 tangent curve",
+  "cov_tol": 0.01,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.7327559997065691,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.220446049250313e-16,
+  "max_dist_uv": 4.440892098500626e-16,
+  "coverage": [
+   {
+    "max": 2.989366980140909e-17,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 2.989366980140909e-17,
+  "hausdorff_out_to_truth": 2.7755575615628914e-17,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c2_cyl_cyl_external",
+  "class": "2 tangent curve",
+  "cov_tol": 0.01,
+  "flags": [
+   "output curve 0 off the true intersection by up to 2.28e+00 (36% of it)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.6174959999043494,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 5.421010862427522e-20,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 5.421010862427522e-20,
+  "hausdorff_out_to_truth": 2.284185307179586,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c2_cyl_on_plane",
+  "class": "2 tangent curve",
+  "cov_tol": 0.01,
+  "flags": [
+   "output curve 0 off the true intersection by up to 1.00e+00 (20% of it)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.43934299992542947,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 0.0,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 1.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c2_sphere_in_cyl",
+  "class": "2 tangent curve",
+  "cov_tol": 0.01,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.4751299998133618,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.1102230246251565e-16,
+  "max_dist_uv": 1.1102230246251565e-16,
+  "coverage": [
+   {
+    "max": 1.5700924586837752e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.5700924586837752e-16,
+  "hausdorff_out_to_truth": 1.5700924586837752e-16,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c2_sphere_in_torus",
+  "class": "2 tangent curve",
+  "cov_tol": 0.01,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.538617000074737,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.220446049250313e-16,
+  "max_dist_uv": 2.220446049250313e-16,
+  "coverage": [
+   {
+    "max": 3.1401849173675503e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 3.1401849173675503e-16,
+  "hausdorff_out_to_truth": 3.1401849173675503e-16,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c2n_cylN_on_planeN",
+  "class": "2 tangent curve",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 3.16969200002859,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c2n_parabcyl_plane",
+  "class": "2 tangent curve",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.4687390000981395,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c2n_quartic_circle",
+  "class": "2 tangent curve",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 5% (max gap 1.01e+00)",
+   "topology ['curve(free_ends=2)', 'curve(free_ends=2)', 'curve(free_ends=2)', 'curve(free_ends=2)', 'curve(free_ends=2)', 'curve(free_ends=2)', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point', 'point'], expected ['curve(free_ends=0)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.5224149999303336,
+  "n_curves": 26,
+  "n_out_points": 20,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.1382172971546606e-10,
+  "max_dist_uv": 5.3644390836712366e-15,
+  "coverage": [
+   {
+    "max": 1.00910423782368,
+    "covered_frac": 0.05194805194805195
+   }
+  ],
+  "hausdorff_truth_to_out": 1.00910423782368,
+  "hausdorff_out_to_truth": 5.33437476528462e-06,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point",
+   "point"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c2n_quartic_contact_parabola",
+  "class": "2 tangent curve",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 3.0499419999614474,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c2n_sphereN_in_cyl",
+  "class": "2 tangent curve",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 11% (max gap 1.71e+00)",
+   "topology ['curve(free_ends=2)', 'curve(free_ends=2)', 'curve(free_ends=2)'], expected ['curve(free_ends=0)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 7.274472000062815,
+  "n_curves": 3,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.4777174373037383e-08,
+  "max_dist_uv": 7.771561172376096e-16,
+  "coverage": [
+   {
+    "max": 1.7097820792789826,
+    "covered_frac": 0.10989010989010989
+   }
+  ],
+  "hausdorff_truth_to_out": 1.7097820792789826,
+  "hausdorff_out_to_truth": 3.2397853231641026e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c3_sphere_on_plane",
+  "class": "3 isolated point",
+  "cov_tol": 0.01,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 3.174978000060946,
+  "n_curves": 0,
+  "n_out_points": 1,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "point": 0,
+    "dist": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "point"
+  ],
+  "output_topology": [
+   "point"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c3_sphere_torus_outer",
+  "class": "3 isolated point",
+  "cov_tol": 0.01,
+  "flags": [
+   "isolated point 0 not found (nearest output inf)",
+   "topology [], expected ['point']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.1562270003414596,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "point": 0,
+    "dist": Infinity
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "point"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c3_spheres_external",
+  "class": "3 isolated point",
+  "cov_tol": 0.01,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5894609998904343,
+  "n_curves": 0,
+  "n_out_points": 1,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "point": 0,
+    "dist": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "point"
+  ],
+  "output_topology": [
+   "point"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c3_spheres_internal",
+  "class": "3 isolated point",
+  "cov_tol": 0.01,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.41981699996540556,
+  "n_curves": 0,
+  "n_out_points": 1,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "point": 0,
+    "dist": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "point"
+  ],
+  "output_topology": [
+   "point"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c3n_four_points",
+  "class": "3 isolated point",
+  "cov_tol": 0.01,
+  "flags": [
+   "isolated point 0 not found (nearest output inf)",
+   "isolated point 1 not found (nearest output inf)",
+   "isolated point 2 not found (nearest output inf)",
+   "isolated point 3 not found (nearest output inf)",
+   "topology [], expected ['point', 'point', 'point', 'point']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.0281800002521777,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "point": 0,
+    "dist": Infinity
+   },
+   {
+    "point": 1,
+    "dist": Infinity
+   },
+   {
+    "point": 2,
+    "dist": Infinity
+   },
+   {
+    "point": 3,
+    "dist": Infinity
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "point",
+   "point",
+   "point",
+   "point"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c3n_parab_apex",
+  "class": "3 isolated point",
+  "cov_tol": 0.01,
+  "flags": [
+   "isolated point 0 not found (nearest output inf)",
+   "topology [], expected ['point']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5328100000951963,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "point": 0,
+    "dist": Infinity
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "point"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c3n_parab_parab_apex",
+  "class": "3 isolated point",
+  "cov_tol": 0.01,
+  "flags": [
+   "isolated point 0 not found (nearest output inf)",
+   "topology [], expected ['point']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 3.7428209998324746,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "point": 0,
+    "dist": Infinity
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "point"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c4_cone_apex_plane",
+  "class": "4 singular",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 21.201524999924004,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.1102230246251565e-16,
+  "max_dist_uv": 2.121150477449813e-16,
+  "coverage": [
+   {
+    "max": 1.1102230246251565e-16,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 1.1102230246251565e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.1102230246251565e-16,
+  "hausdorff_out_to_truth": 1.1102230246251565e-16,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c4_steinmetz",
+  "class": "4 singular",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.7068839999628835,
+  "n_curves": 7,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.220446049250313e-16,
+  "max_dist_uv": 1.1354494747761734e-06,
+  "coverage": [
+   {
+    "max": 3.2487068343022356e-16,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 3.2487068343022356e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 3.2487068343022356e-16,
+  "hausdorff_out_to_truth": 3.3306690738754696e-16,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c4_viviani_figure8",
+  "class": "4 singular",
+  "cov_tol": 0.001,
+  "flags": [
+   "singular point 0 not identified (no curve end/point within 1.0e-03; nearest 2.00e+00)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 22.066473999984737,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 3.660216052470133e-08,
+  "max_dist_uv": 4.2065276262270856e-08,
+  "coverage": [
+   {
+    "max": 5.227772371688049e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 5.227772371688049e-07,
+  "hausdorff_out_to_truth": 1.3800625320914473e-06,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c4n_cusp",
+  "class": "4 singular",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 10.164678999899479,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.2478613054753773e-08,
+  "max_dist_uv": 1.2568068047391634e-07,
+  "coverage": [
+   {
+    "max": 4.0897069760157745e-05,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 4.0897069760157745e-05,
+  "hausdorff_out_to_truth": 0.00043313964903646154,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c4n_saddle_tangent_plane",
+  "class": "4 singular",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 1.9832170000881888,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.5035438768260588e-16,
+  "max_dist_uv": 2.220446049250313e-16,
+  "coverage": [
+   {
+    "max": 6.648015471455437e-16,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 0.0,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 6.648015471455437e-16,
+  "hausdorff_out_to_truth": 6.654676809603188e-16,
+  "expected_topology": [
+   "curve(free_ends=4)"
+  ],
+  "output_topology": [
+   "curve(free_ends=4)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c4n_viviani_nurbs",
+  "class": "4 singular",
+  "cov_tol": 0.001,
+  "flags": [
+   "output curves 0 and 2 overlap (56% of one lies on the other)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 77.38437200032422,
+  "n_curves": 3,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.79138545950164e-07,
+  "max_dist_uv": 1.7031456711613657e-07,
+  "coverage": [
+   {
+    "max": 4.13611204203568e-05,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 4.13611204203568e-05,
+  "hausdorff_out_to_truth": 4.8505597572562624e-05,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c5_corner_to_corner",
+  "class": "5 boundary",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 1.0311060000276484,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.333608069074372e-16,
+  "max_dist_uv": 1.333608069074372e-16,
+  "coverage": [
+   {
+    "max": 1.5700924586837752e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.5700924586837752e-16,
+  "hausdorff_out_to_truth": 2.482534153247273e-16,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c5_curve_on_edge",
+  "class": "5 boundary",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.40534199979447294,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 0.0,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c5_cyl_end_circle",
+  "class": "5 boundary",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5166720002307557,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.1102230246251565e-16,
+  "max_dist_uv": 1.1102230246251565e-16,
+  "coverage": [
+   {
+    "max": 1.5700924586837752e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.5700924586837752e-16,
+  "hausdorff_out_to_truth": 1.5700924586837752e-16,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c5_cyl_quilt_seam",
+  "class": "5 boundary",
+  "cov_tol": 0.001,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.2942040000561974,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c5_hemisphere_equator",
+  "class": "5 boundary",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5563800000345509,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.1102230246251565e-16,
+  "max_dist_uv": 1.1102230246251565e-16,
+  "coverage": [
+   {
+    "max": 1.5700924586837752e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.5700924586837752e-16,
+  "hausdorff_out_to_truth": 1.5700924586837752e-16,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c5_shared_border_L",
+  "class": "5 boundary",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.47014600022521336,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 0.0,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c5n_curve_on_edge",
+  "class": "5 boundary",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 7.2549780002191255,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 0.0,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c5n_cylN_quilt_seam",
+  "class": "5 boundary",
+  "cov_tol": 0.001,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.642128999923443,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c6_cyl_overlap",
+  "class": "6 coincident",
+  "cov_tol": 0.001,
+  "flags": [
+   "region boundary covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=0)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.2944050002042786,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c6_planes_identical",
+  "class": "6 coincident",
+  "cov_tol": 0.001,
+  "flags": [
+   "region boundary covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=0)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.20191999965391005,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c6_planes_overlap",
+  "class": "6 coincident",
+  "cov_tol": 0.001,
+  "flags": [
+   "region boundary covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=0)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.22701400030200602,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c6_spheres_overlap",
+  "class": "6 coincident",
+  "cov_tol": 0.001,
+  "flags": [
+   "region boundary covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=0)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.2310070003659348,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c6n_cyl_vs_nurbscyl",
+  "class": "6 coincident",
+  "cov_tol": 0.001,
+  "flags": [
+   "region boundary covered 50% (max gap 1.00e+00)",
+   "output curve 0 off the true intersection by up to 1.41e+00 (50% of it)",
+   "output curve 1 off the true intersection by up to 1.73e+00 (100% of it)",
+   "output curve 2 off the true intersection by up to 1.73e+00 (100% of it)",
+   "output curve 3 off the true intersection by up to 1.00e+00 (50% of it)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.3106660000848933,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 3.3306690738754696e-16,
+  "max_dist_uv": 3.3306690738754696e-16,
+  "coverage": [
+   {
+    "max": 1.000001223139428,
+    "covered_frac": 0.5014985014985015
+   }
+  ],
+  "hausdorff_truth_to_out": 1.000001223139428,
+  "hausdorff_out_to_truth": 1.7320508075688772,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c6n_plane_vs_nurbsplane",
+  "class": "6 coincident",
+  "cov_tol": 0.001,
+  "flags": [
+   "region boundary covered 75% (max gap 5.00e-01)",
+   "output curve 0 off the true intersection by up to 1.00e+00 (60% of it)",
+   "output curve 1 off the true intersection by up to 1.00e+00 (100% of it)",
+   "output curve 2 off the true intersection by up to 1.00e+00 (60% of it)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.7985529996403784,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 0.5000003933796853,
+    "covered_frac": 0.7512487512487512
+   }
+  ],
+  "hausdorff_truth_to_out": 0.5000003933796853,
+  "hausdorff_out_to_truth": 1.0000001249999921,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c6n_sphere_vs_nurbssphere",
+  "class": "6 coincident",
+  "cov_tol": 0.001,
+  "flags": [
+   "region boundary covered 75% (max gap 5.18e-01)",
+   "topology ['curve(free_ends=2)'], expected ['curve(free_ends=0)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.289912999913213,
+  "n_curves": 3,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 3.3306690738754696e-16,
+  "max_dist_uv": 3.3306690738754696e-16,
+  "coverage": [
+   {
+    "max": 0.5176381947848804,
+    "covered_frac": 0.7512487512487512
+   }
+  ],
+  "hausdorff_truth_to_out": 0.5176381947848804,
+  "hausdorff_out_to_truth": 3.084247180347494e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_angle_planes_1e-3",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.02000000333333372,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 1.756588000262127,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 0.0,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_angle_planes_1e-4",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.2000000003333333,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 1.2832349998461723,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 0.0,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_angle_planes_1e-5",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.5,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 1.4527870002893906,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 0.0,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_angle_planes_1e-6",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.5,
+  "flags": [
+   "branch 0 covered 50% (max gap 1.00e+00)",
+   "output curve 0 off the true intersection by up to 1.00e+00 (100% of it)",
+   "output curve 1 off the true intersection by up to 1.00e+00 (50% of it)",
+   "output curve 2 off the true intersection by up to 1.00e+00 (100% of it)",
+   "output curve 3 off the true intersection by up to 1.00e+00 (50% of it)",
+   "topology ['curve(free_ends=0)'], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 1.3447400001496135,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 9.999999999998337e-07,
+  "max_dist_uv": 9.999999999998337e-07,
+  "coverage": [
+   {
+    "max": 1.0,
+    "covered_frac": 0.5014985014985015
+   }
+  ],
+  "hausdorff_truth_to_out": 1.0,
+  "hausdorff_out_to_truth": 1.0000001249999924,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_angle_planes_1e-7",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.5,
+  "flags": [
+   "branch 0 covered 50% (max gap 1.00e+00)",
+   "output curve 0 off the true intersection by up to 1.00e+00 (100% of it)",
+   "output curve 1 off the true intersection by up to 1.00e+00 (50% of it)",
+   "output curve 2 off the true intersection by up to 1.00e+00 (100% of it)",
+   "output curve 3 off the true intersection by up to 1.00e+00 (50% of it)",
+   "topology ['curve(free_ends=0)'], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 1.1990319999313215,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 9.999999999999984e-08,
+  "max_dist_uv": 9.999999999999984e-08,
+  "coverage": [
+   {
+    "max": 1.0,
+    "covered_frac": 0.5014985014985015
+   }
+  ],
+  "hausdorff_truth_to_out": 1.0,
+  "hausdorff_out_to_truth": 1.0000001249999921,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_angle_planes_1e-8",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.5,
+  "flags": [
+   "branch 0 covered 50% (max gap 1.00e+00)",
+   "output curve 0 off the true intersection by up to 1.00e+00 (100% of it)",
+   "output curve 1 off the true intersection by up to 1.00e+00 (50% of it)",
+   "output curve 2 off the true intersection by up to 1.00e+00 (100% of it)",
+   "output curve 3 off the true intersection by up to 1.00e+00 (50% of it)",
+   "topology ['curve(free_ends=0)'], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 1.2612230002559954,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1e-08,
+  "max_dist_uv": 1e-08,
+  "coverage": [
+   {
+    "max": 1.0,
+    "covered_frac": 0.5014985014985015
+   }
+  ],
+  "hausdorff_truth_to_out": 1.0,
+  "hausdorff_out_to_truth": 1.0000001249999921,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_offset_planes_1e-3",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.3868600001624145,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [],
+  "output_topology": [],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_offset_planes_1e-5",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.7319999999708671,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [],
+  "output_topology": [],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_offset_planes_1e-7",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.001,
+  "flags": [
+   "output curve 0 off the true intersection by up to inf (100% of it)",
+   "output curve 1 off the true intersection by up to inf (100% of it)",
+   "output curve 2 off the true intersection by up to inf (100% of it)",
+   "output curve 3 off the true intersection by up to inf (100% of it)",
+   "topology ['curve(free_ends=0)'], expected []"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 1.076865000413818,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.0000000000000002e-07,
+  "max_dist_uv": 1.0000000000000002e-07,
+  "coverage": [],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": Infinity,
+  "expected_topology": [],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_offset_spheres_1e-3",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.20439499985513976,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [],
+  "output_topology": [],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_offset_spheres_1e-5",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.21994600001562503,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [],
+  "output_topology": [],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_offset_spheres_1e-7",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.25997400007327087,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [],
+  "hausdorff_truth_to_out": 0.0,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [],
+  "output_topology": [],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_sunk_cyl_1e-3",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.02000000333333372,
+  "flags": [
+   "output curve 0 off the true intersection by up to 1.00e+00 (20% of it)",
+   "topology ['curve(free_ends=2)'], expected ['curve(free_ends=2)', 'curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.4675459999816667,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.999999583255033e-07,
+  "max_dist_uv": 4.999999583255033e-07,
+  "coverage": [
+   {
+    "max": 0.0009999998333255103,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 0.0009999998333255103,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.0009999998333255103,
+  "hausdorff_out_to_truth": 1.0000004999997083,
+  "expected_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_sunk_cyl_1e-4",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.2000000003333333,
+  "flags": [
+   "output curve 0 off the true intersection by up to 1.00e+00 (16% of it)",
+   "topology ['curve(free_ends=2)'], expected ['curve(free_ends=2)', 'curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.4702780001935025,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.999999969612645e-09,
+  "max_dist_uv": 4.999999969612645e-09,
+  "coverage": [
+   {
+    "max": 9.999999957112645e-05,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 9.999999957112645e-05,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 9.999999957112645e-05,
+  "hausdorff_out_to_truth": 1.000000005,
+  "expected_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_sunk_cyl_1e-5",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.5,
+  "flags": [
+   "output curve 0 off the true intersection by up to 1.00e+00 (10% of it)",
+   "topology ['curve(free_ends=2)'], expected ['curve(free_ends=2)', 'curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.4323540001678339,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.000000413701855e-11,
+  "max_dist_uv": 5.000000413701855e-11,
+  "coverage": [
+   {
+    "max": 1.0000000413576846e-05,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 1.0000000413576846e-05,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.0000000413576846e-05,
+  "hausdorff_out_to_truth": 1.00000000005,
+  "expected_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_sunk_cyl_1e-6",
+  "class": "7 near-degenerate",
+  "cov_tol": 0.5,
+  "flags": [
+   "output curve 0 off the true intersection by up to 1.00e+00 (10% of it)",
+   "topology ['curve(free_ends=2)'], expected ['curve(free_ends=2)', 'curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.4225769998811302,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.000444502911705e-13,
+  "max_dist_uv": 5.000444502911705e-13,
+  "coverage": [
+   {
+    "max": 1.0000444493031753e-06,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 1.0000444493031753e-06,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.0000444493031753e-06,
+  "hausdorff_out_to_truth": 1.0000000000005,
+  "expected_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_tiny_loop_parab_1e-4",
+  "class": "7 near-degenerate",
+  "cov_tol": 2e-05,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 1.2156479997429415,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 3.556312316432057e-12,
+  "max_dist_uv": 3.556312316432057e-12,
+  "coverage": [
+   {
+    "max": 1.7813490172643972e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.7813490172643972e-08,
+  "hausdorff_out_to_truth": 1.775171690052431e-08,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_tiny_loop_parab_1e-5",
+  "class": "7 near-degenerate",
+  "cov_tol": 2.0000000000000003e-06,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.9861439998530841,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 7.807036135922838e-13,
+  "max_dist_uv": 7.807150557690358e-13,
+  "coverage": [
+   {
+    "max": 3.895540833261523e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 3.895540833261523e-08,
+  "hausdorff_out_to_truth": 3.89633368048189e-08,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_tiny_loop_parab_1e-6",
+  "class": "7 near-degenerate",
+  "cov_tol": 2e-07,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=0)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.8400839997193543,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_tiny_loop_parab_1e-7",
+  "class": "7 near-degenerate",
+  "cov_tol": 2e-08,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=0)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.625073999799497,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_tiny_loop_sphere_1e-4",
+  "class": "7 near-degenerate",
+  "cov_tol": 2.0000000136269896e-05,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5038399999648391,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 1.2499998135549916e-13,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.2499998135549916e-13,
+  "hausdorff_out_to_truth": 1.2500001838702542e-13,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_tiny_loop_sphere_1e-5",
+  "class": "7 near-degenerate",
+  "cov_tol": 2.0000000827153693e-06,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.452106000011554,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 1.2500201966739548e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.2500201966739548e-16,
+  "hausdorff_out_to_truth": 1.2500223344531419e-16,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_tiny_loop_sphere_1e-6",
+  "class": "7 near-degenerate",
+  "cov_tol": 2.0000888986063507e-07,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5213320000621025,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 1.2511964390236474e-19,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.2511964390236474e-19,
+  "hausdorff_out_to_truth": 1.2513915500255506e-19,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c7_tiny_loop_sphere_1e-7",
+  "class": "7 near-degenerate",
+  "cov_tol": 1.9992005623875145e-08,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.45457799978976254,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": 1.5104598843494131e-22,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.5104598843494131e-22,
+  "hausdorff_out_to_truth": 1.5104598843494131e-22,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8_cone_plane_seam",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.6020460000399908,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.220446049250313e-16,
+  "max_dist_uv": 2.220446049250313e-16,
+  "coverage": [
+   {
+    "max": 2.220446049250313e-16,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 2.220446049250313e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 2.220446049250313e-16,
+  "hausdorff_out_to_truth": 2.220446049250313e-16,
+  "expected_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8_cyl_plane_seam_line",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [
+   "output curve 0 off the true intersection by up to 2.29e+00 (36% of it)",
+   "output curve 1 off the true intersection by up to 2.29e+00 (36% of it)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5233810002209793,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 1.2246467991473532e-16,
+  "coverage": [
+   {
+    "max": 5.421010862427522e-20,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 5.421010862427522e-20,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 5.421010862427522e-20,
+  "hausdorff_out_to_truth": 2.285185307179586,
+  "expected_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8_sphere_cyl_through_poles",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 21.075240999834932,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.9117844896054947e-07,
+  "max_dist_uv": 5.7351061899524325e-08,
+  "coverage": [
+   {
+    "max": 8.251853551426243e-08,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 8.251825343408303e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 8.251853551426243e-08,
+  "hausdorff_out_to_truth": 2.655162474760029e-07,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8_sphere_plane_poles",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5978559997856792,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.1102230246251565e-16,
+  "max_dist_uv": 1.8369701501256523e-16,
+  "coverage": [
+   {
+    "max": 1.5700924586837752e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.5700924586837752e-16,
+  "hausdorff_out_to_truth": 1.5700924586837752e-16,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8_sphere_plane_poles_seam",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.5953310001132195,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.1102230246251565e-16,
+  "max_dist_uv": 1.224646766750435e-16,
+  "coverage": [
+   {
+    "max": 1.5700924586837752e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.5700924586837752e-16,
+  "hausdorff_out_to_truth": 1.5700924586837752e-16,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8_sphere_polar_cap",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.4676840003412508,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.1102230246251565e-16,
+  "max_dist_uv": 1.1102230246251565e-16,
+  "coverage": [
+   {
+    "max": 7.850462293418876e-17,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 7.850462293418876e-17,
+  "hausdorff_out_to_truth": 7.850462293418876e-17,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8_torus_axis_plane_seam",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.7123400000637048,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.220446049250313e-16,
+  "max_dist_uv": 2.220446049250313e-16,
+  "coverage": [
+   {
+    "max": 4.965068306494546e-16,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 4.965068306494546e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 4.965068306494546e-16,
+  "hausdorff_out_to_truth": 4.965068306494546e-16,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8_torus_equator_seam",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 0.6469929999184387,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.440892098500626e-16,
+  "max_dist_uv": 4.440892098500626e-16,
+  "coverage": [
+   {
+    "max": 6.280369834735101e-16,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 3.1401849173675503e-16,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 6.280369834735101e-16,
+  "hausdorff_out_to_truth": 6.280369834735101e-16,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8n_cylN_seam_line",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [
+   "output curves 0 and 1 overlap (100% of one lies on the other)",
+   "topology ['curve(free_ends=0)', 'curve(free_ends=2)'], expected ['curve(free_ends=2)', 'curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.331602999674942,
+  "n_curves": 3,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.449293598294707e-16,
+  "max_dist_uv": 2.449293598294707e-16,
+  "coverage": [
+   {
+    "max": 0.0,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 2.168404344971009e-19,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 2.168404344971009e-19,
+  "hausdorff_out_to_truth": 2.449293598294707e-16,
+  "expected_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=2)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8n_sphereN_polar_cap",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.471447000061744,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 3.1487206175739857e-09,
+  "max_dist_uv": 3.1487206175739857e-09,
+  "coverage": [
+   {
+    "max": 1.0771531347901323e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.0771531347901323e-07,
+  "hausdorff_out_to_truth": 9.628841268744473e-08,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8n_sphereN_poles",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 4.612600000200473,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.7044096406747542e-08,
+  "max_dist_uv": 2.7044096406747542e-08,
+  "coverage": [
+   {
+    "max": 1.0505485133934771e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.0505485133934771e-07,
+  "hausdorff_out_to_truth": 3.155930123054709e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c8n_torusN_equator_seam",
+  "class": "8 periodic/seam/pole",
+  "cov_tol": 0.001,
+  "flags": [
+   "output curves 0 and 1 overlap (100% of one lies on the other)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.968330999919999,
+  "n_curves": 3,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.567458078419406e-08,
+  "max_dist_uv": 4.567458078419406e-08,
+  "coverage": [
+   {
+    "max": 1.3642650508666387e-06,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 1.6826866094136073e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.3642650508666387e-06,
+  "hausdorff_out_to_truth": 1.2332088914791592e-06,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c9n_deg6_circle",
+  "class": "9 high degree/rational",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 8.44238999980007,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 6.009066182690328e-08,
+  "max_dist_uv": 1.452144882674311e-07,
+  "coverage": [
+   {
+    "max": 1.9111846636470224e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.9111846636470224e-07,
+  "hausdorff_out_to_truth": 1.7414185083691705e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c9n_elevated_paraboloids",
+  "class": "9 high degree/rational",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 26.56988199987609,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 3.833026558387108e-08,
+  "max_dist_uv": 7.666053032368051e-08,
+  "coverage": [
+   {
+    "max": 2.864748013865688e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 2.864748013865688e-07,
+  "hausdorff_out_to_truth": 2.7672193468377596e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c9n_many_spans_plane_sphere",
+  "class": "9 high degree/rational",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 16.090156999780447,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.760356680539758e-08,
+  "max_dist_uv": 1.211406481793631e-07,
+  "coverage": [
+   {
+    "max": 3.295340250631561e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 3.295340250631561e-07,
+  "hausdorff_out_to_truth": 6.406966766585542e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c9n_rational_deg5_cyl_arc",
+  "class": "9 high degree/rational",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 4.564564000247628,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.819602688639236e-09,
+  "max_dist_uv": 5.819602688639236e-09,
+  "coverage": [
+   {
+    "max": 2.540088299675211e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 2.540088299675211e-08,
+  "hausdorff_out_to_truth": 2.385138187570002e-08,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c9n_rational_deg5_sphere_arc",
+  "class": "9 high degree/rational",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 3.079303000049549,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.9081870306081328e-08,
+  "max_dist_uv": 1.9081870306081328e-08,
+  "coverage": [
+   {
+    "max": 5.397760569820823e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 5.397760569820823e-08,
+  "hausdorff_out_to_truth": 4.422269255418059e-08,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "c9n_refined_torus_sphere",
+  "class": "9 high degree/rational",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 11.53926599999977,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.153339666108536e-08,
+  "max_dist_uv": 3.9968028886505635e-15,
+  "coverage": [
+   {
+    "max": 1.3622162440082867e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 1.362216289724023e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 1.362216289724023e-07,
+  "hausdorff_out_to_truth": 1.0026210376232337e-07,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_appendix_ex2",
+  "class": "Y23 published parameters",
+  "cov_tol": 0.005,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 55.46241699994425,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.433367334424888e-08,
+  "max_dist_uv": 1.4550802456209373e-07,
+  "coverage": [
+   {
+    "max": 1.3500273087973237e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 3.1585557504231804e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 3.3177706981541615e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 8.367848928816808e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 3.3177706981541615e-07,
+  "hausdorff_out_to_truth": 1.387377346322514e-06,
+  "expected_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "curve(free_ends=4)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "curve(free_ends=4)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_fig1a_two_loops_cross",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 66.57372400013628,
+  "n_curves": 7,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 3.940583497812677e-08,
+  "max_dist_uv": 5.155162376079451e-08,
+  "coverage": [
+   {
+    "max": 6.022859866374002e-08,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 3.5292990785125063e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 6.022859866374002e-08,
+  "hausdorff_out_to_truth": 1.1141178650569423e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_fig1b_two_arcs_and_point",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "isolated point 0 not found (nearest output 1.49e+00)",
+   "topology ['curve(free_ends=2)', 'curve(free_ends=2)'], expected ['curve(free_ends=2)', 'curve(free_ends=2)', 'point']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 40.795204999994894,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.9628798014197158e-08,
+  "max_dist_uv": 3.662598854341959e-08,
+  "coverage": [
+   {
+    "max": 3.1234043859921885e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 3.1816960768428165e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "point": 0,
+    "dist": 1.487793273950728
+   }
+  ],
+  "hausdorff_truth_to_out": 1.487793273950728,
+  "hausdorff_out_to_truth": 2.934713138467435e-07,
+  "expected_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "point"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_fig1c_boundary_triangle",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.001,
+  "flags": [
+   "branch 0 covered 0% (max gap 6.54e-01)",
+   "topology ['curve(free_ends=2)'], expected ['curve(free_ends=0)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 56.507761999910144,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 3.510935295240468e-08,
+  "max_dist_uv": 9.348918613351382e-09,
+  "coverage": [
+   {
+    "max": 0.6536500319458479,
+    "covered_frac": 0.002997002997002997
+   },
+   {
+    "max": 3.837111109511314e-08,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 5.76253657117742e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.6536500319458479,
+  "hausdorff_out_to_truth": 6.474990159708041e-08,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_fig1d_two_quads",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 77% (max gap 2.74e-01)",
+   "branch 1 covered 0% (max gap 7.03e-01)",
+   "branch 2 covered 100% (max gap 1.49e-02)",
+   "branch 3 covered 31% (max gap 5.72e-01)",
+   "branch 5 covered 79% (max gap 2.46e-01)",
+   "branch 6 covered 0% (max gap 6.77e-01)",
+   "topology ['curve(free_ends=2)', 'curve(free_ends=2)', 'curve(free_ends=2)', 'curve(free_ends=2)', 'point'], expected ['curve(free_ends=0)']",
+   "singular point 2 not identified (no curve end/point within 1.0e-02; nearest 2.74e-01)",
+   "singular point 3 not identified (no curve end/point within 1.0e-02; nearest 1.47e-02)",
+   "singular point 4 not identified (no curve end/point within 1.0e-02; nearest 1.88e-01)",
+   "singular point 5 not identified (no curve end/point within 1.0e-02; nearest 2.45e-01)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 527.8208560002895,
+  "n_curves": 7,
+  "n_out_points": 1,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.545378824863257e-08,
+  "max_dist_uv": 3.946861022448105e-12,
+  "coverage": [
+   {
+    "max": 0.27418492321643084,
+    "covered_frac": 0.7702297702297702
+   },
+   {
+    "max": 0.7026321995428519,
+    "covered_frac": 0.0
+   },
+   {
+    "max": 0.01492411358785023,
+    "covered_frac": 0.997002997002997
+   },
+   {
+    "max": 0.5718764926875494,
+    "covered_frac": 0.3076923076923077
+   },
+   {
+    "max": 6.159441894955708e-09,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 0.24639838535805514,
+    "covered_frac": 0.7902097902097902
+   },
+   {
+    "max": 0.6768119391203135,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.7026321995428519,
+  "hausdorff_out_to_truth": 9.156780618980284e-08,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "curve(free_ends=2)",
+   "point"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_fig1e_loops_touching",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.005,
+  "flags": [
+   "output curves 0 and 1 overlap (23% of one lies on the other)",
+   "output curves 2 and 3 overlap (23% of one lies on the other)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 103.98631799989744,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.944513465332534e-08,
+  "max_dist_uv": 2.0789593813130836e-07,
+  "coverage": [
+   {
+    "max": 2.0984842423681575e-05,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 7.95176728534131e-06,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 2.0984842423681575e-05,
+  "hausdorff_out_to_truth": 1.3033756944078532e-05,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "WRONG TOPOLOGY",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_fig1f_high_order_contact",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 3.7036859998806904,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_fig1g_three_points",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "isolated point 0 not found (nearest output inf)",
+   "isolated point 1 not found (nearest output inf)",
+   "isolated point 2 not found (nearest output inf)",
+   "topology [], expected ['point', 'point', 'point']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 17.604624000341573,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "point": 0,
+    "dist": Infinity
+   },
+   {
+    "point": 1,
+    "dist": Infinity
+   },
+   {
+    "point": 2,
+    "dist": Infinity
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "point",
+   "point",
+   "point"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t2_ex1_tangent_line",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.112995000061346,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t2_ex2_tangential_curve",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.8786240000044927,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t2_ex3_loop_two_curves",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.005,
+  "flags": [
+   "branch 0 covered 81% (max gap 2.86e-02)",
+   "branch 1 covered 97% (max gap 2.22e-02)",
+   "branch 2 covered 97% (max gap 2.31e-02)",
+   "topology ['curve(free_ends=2)', 'curve(free_ends=2)'], expected ['curve(free_ends=4)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 52.70631199982745,
+  "n_curves": 6,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.0854587037663735e-08,
+  "max_dist_uv": 7.237092817282962e-09,
+  "coverage": [
+   {
+    "max": 0.02863175615883468,
+    "covered_frac": 0.8061938061938062
+   },
+   {
+    "max": 0.02217788398181934,
+    "covered_frac": 0.97002997002997
+   },
+   {
+    "max": 0.023132814002051007,
+    "covered_frac": 0.97002997002997
+   }
+  ],
+  "hausdorff_truth_to_out": 0.02863175615883468,
+  "hausdorff_out_to_truth": 3.0721334743147935e-07,
+  "expected_topology": [
+   "curve(free_ends=4)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t2_ex4_tangential_curve_saddle",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.867371000320418,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t2_ex5_two_loops",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.005,
+  "flags": [
+   "branch 0 covered 99% (max gap 1.90e-02)",
+   "branch 1 covered 0% (max gap 5.06e-01)",
+   "topology ['curve(free_ends=2)', 'curve(free_ends=2)'], expected ['curve(free_ends=0)']",
+   "singular point 0 not identified (no curve end/point within 5.0e-03; nearest 1.80e-02)",
+   "singular point 1 not identified (no curve end/point within 5.0e-03; nearest 1.83e-02)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 32.19487800015486,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 6.586712661614005e-08,
+  "max_dist_uv": 1.670492431294062e-08,
+  "coverage": [
+   {
+    "max": 0.018977424594003724,
+    "covered_frac": 0.986013986013986
+   },
+   {
+    "max": 0.5058595890768196,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": 0.5058595890768196,
+  "hausdorff_out_to_truth": 3.4422245266199785e-07,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t2_ex6_loop_and_point",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "isolated point 0 not found (nearest output 4.13e-01)",
+   "topology ['curve(free_ends=0)'], expected ['curve(free_ends=0)', 'point']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 21.454157999869494,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 1.5350207030195916e-08,
+  "max_dist_uv": 1.315729727738088e-08,
+  "coverage": [
+   {
+    "max": 1.4097610987410987e-06,
+    "covered_frac": 1.0
+   },
+   {
+    "point": 0,
+    "dist": 0.4126079526756093
+   }
+  ],
+  "hausdorff_truth_to_out": 0.4126079526756093,
+  "hausdorff_out_to_truth": 1.483187974615032e-07,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "point"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t3_ex1_torus_ellipsoid",
+  "class": "Y23 published parameters",
+  "cov_tol": 0.005,
+  "flags": [
+   "isolated point 0 not found (nearest output 9.76e-01)",
+   "isolated point 1 not found (nearest output 9.76e-01)",
+   "topology ['curve(free_ends=0)', 'curve(free_ends=0)'], expected ['curve(free_ends=0)', 'curve(free_ends=0)', 'point', 'point']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 90.09242699994502,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.2744260841639166e-08,
+  "max_dist_uv": 1.101230722166946e-07,
+  "coverage": [
+   {
+    "max": 2.6294813245329046e-05,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 2.434705635307355e-05,
+    "covered_frac": 1.0
+   },
+   {
+    "point": 0,
+    "dist": 0.9759130062582505
+   },
+   {
+    "point": 1,
+    "dist": 0.9759441505240487
+   }
+  ],
+  "hausdorff_truth_to_out": 0.9759441505240487,
+  "hausdorff_out_to_truth": 0.00035061537978841814,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)",
+   "point",
+   "point"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)",
+   "curve(free_ends=0)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t3_ex2_torus_ellipsoid",
+  "class": "Y23 published parameters",
+  "cov_tol": 0.005,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 99.81086400011918,
+  "n_curves": 1,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 3.94250076372539e-08,
+  "max_dist_uv": 3.970589955715198e-07,
+  "coverage": [
+   {
+    "max": 4.861841836347749e-06,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 4.861841836347749e-06,
+  "hausdorff_out_to_truth": 1.5023406668260763e-05,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t3_ex3_torus_ellipsoid",
+  "class": "Y23 published parameters",
+  "cov_tol": 0.005,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 157.12299200004054,
+  "n_curves": 8,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 6.046833878059488e-08,
+  "max_dist_uv": 1.2734554317995213e-08,
+  "coverage": [
+   {
+    "max": 6.678745125519796e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 7.007546782796003e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 7.007546782796003e-07,
+  "hausdorff_out_to_truth": 9.187607961553857e-06,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t3_ex4_torus_ellipsoid",
+  "class": "Y23 published parameters",
+  "cov_tol": 0.005,
+  "flags": [
+   "isolated point 0 not found (nearest output 1.63e+00)",
+   "topology ['curve(free_ends=0)'], expected ['curve(free_ends=0)', 'point']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 98.9575930002502,
+  "n_curves": 3,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.0876872603744516e-08,
+  "max_dist_uv": 1.5423308008521985e-07,
+  "coverage": [
+   {
+    "max": 0.00010100806603350453,
+    "covered_frac": 1.0
+   },
+   {
+    "point": 0,
+    "dist": 1.6329931618554525
+   }
+  ],
+  "hausdorff_truth_to_out": 1.6329931618554525,
+  "hausdorff_out_to_truth": 1.9292409417734132e-05,
+  "expected_topology": [
+   "curve(free_ends=0)",
+   "point"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t3_ex5_torus_ellipsoid",
+  "class": "Y23 published parameters",
+  "cov_tol": 0.005,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 84.59000099992409,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 4.691029364956023e-08,
+  "max_dist_uv": 4.4607799240334644e-08,
+  "coverage": [
+   {
+    "max": 4.5811007678240696e-07,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 4.5852309368870455e-07,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 4.5852309368870455e-07,
+  "hausdorff_out_to_truth": 1.2491680650839215e-05,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=0)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t6_ex1_tangent_line",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 2.4495040001966117,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t6_ex2_tangential_arc",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 0% (max gap inf)",
+   "topology [], expected ['curve(free_ends=2)']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 4.180427999926906,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "max": Infinity,
+    "covered_frac": 0.0
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t6_ex3_two_crossing_curves",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.001,
+  "flags": [],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 21.68052099978013,
+  "n_curves": 4,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.8928295054133824e-08,
+  "max_dist_uv": 1.9581323451589583e-08,
+  "coverage": [
+   {
+    "max": 4.2135806391365186e-08,
+    "covered_frac": 1.0
+   },
+   {
+    "max": 6.096183813915378e-08,
+    "covered_frac": 1.0
+   }
+  ],
+  "hausdorff_truth_to_out": 6.096183813915378e-08,
+  "hausdorff_out_to_truth": 6.622886060901944e-08,
+  "expected_topology": [
+   "curve(free_ends=4)"
+  ],
+  "output_topology": [
+   "curve(free_ends=4)"
+  ],
+  "verdict": "PASS",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t6_ex4_tangential_point",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "isolated point 0 not found (nearest output inf)",
+   "topology [], expected ['point']"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 4.805261999990762,
+  "n_curves": 0,
+  "n_out_points": 0,
+  "types": [],
+  "max_dist_3d": 0.0,
+  "max_dist_uv": 0.0,
+  "coverage": [
+   {
+    "point": 0,
+    "dist": Infinity
+   }
+  ],
+  "hausdorff_truth_to_out": Infinity,
+  "hausdorff_out_to_truth": 0.0,
+  "expected_topology": [
+   "point"
+  ],
+  "output_topology": [],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t6_ex5_four_boundary_curves",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 0% (max gap 1.67e+00)",
+   "branch 1 covered 0% (max gap 1.67e+00)",
+   "branch 2 covered 89% (max gap 9.05e-02)",
+   "branch 3 covered 60% (max gap 7.25e-01)",
+   "topology ['curve(free_ends=2)', 'curve(free_ends=2)'], expected ['curve(free_ends=0)']",
+   "singular point 0 not identified (no curve end/point within 1.0e-02; nearest 7.25e-01)",
+   "singular point 1 not identified (no curve end/point within 1.0e-02; nearest 1.67e+00)",
+   "singular point 2 not identified (no curve end/point within 1.0e-02; nearest 8.61e-02)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 32.88100400004623,
+  "n_curves": 2,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 5.0566922345244475e-08,
+  "max_dist_uv": 1.5362810704575546e-13,
+  "coverage": [
+   {
+    "max": 1.6726158182296733,
+    "covered_frac": 0.0
+   },
+   {
+    "max": 1.6726158182296733,
+    "covered_frac": 0.0
+   },
+   {
+    "max": 0.09049970373347557,
+    "covered_frac": 0.8931068931068931
+   },
+   {
+    "max": 0.7248967999183025,
+    "covered_frac": 0.5964035964035964
+   }
+  ],
+  "hausdorff_truth_to_out": 1.6726158182296733,
+  "hausdorff_out_to_truth": 7.211757964602053e-08,
+  "expected_topology": [
+   "curve(free_ends=0)"
+  ],
+  "output_topology": [
+   "curve(free_ends=2)",
+   "curve(free_ends=2)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ },
+ {
+  "id": "y23_t6_ex6_four_boundary_curves",
+  "class": "Y23 reconstruction",
+  "cov_tol": 0.01,
+  "flags": [
+   "branch 0 covered 97% (max gap 6.04e-02)",
+   "branch 1 covered 0% (max gap 7.36e-01)",
+   "branch 2 covered 0% (max gap 1.12e+00)",
+   "branch 3 covered 96% (max gap 4.29e-02)",
+   "output curves 1 and 2 overlap (100% of one lies on the other)",
+   "topology ['curve(free_ends=1)', 'curve(free_ends=2)'], expected ['curve(free_ends=2)']",
+   "singular point 0 not identified (no curve end/point within 1.0e-02; nearest 5.99e-02)",
+   "singular point 1 not identified (no curve end/point within 1.0e-02; nearest 4.17e-02)"
+  ],
+  "status": 1000,
+  "status_name": "OK",
+  "time_ms": 89.76165300009598,
+  "n_curves": 3,
+  "n_out_points": 0,
+  "types": [
+   "UNKNOWN",
+   "UNKNOWN",
+   "UNKNOWN"
+  ],
+  "max_dist_3d": 2.738232613835575e-08,
+  "max_dist_uv": 4.410975772226827e-15,
+  "coverage": [
+   {
+    "max": 0.060390983297963614,
+    "covered_frac": 0.9660339660339661
+   },
+   {
+    "max": 0.7358012046506716,
+    "covered_frac": 0.0
+   },
+   {
+    "max": 1.1167339979506707,
+    "covered_frac": 0.0
+   },
+   {
+    "max": 0.04291867635982076,
+    "covered_frac": 0.9590409590409591
+   }
+  ],
+  "hausdorff_truth_to_out": 1.1167339979506707,
+  "hausdorff_out_to_truth": 4.2059765363313536e-08,
+  "expected_topology": [
+   "curve(free_ends=2)"
+  ],
+  "output_topology": [
+   "curve(free_ends=1)",
+   "curve(free_ends=2)"
+  ],
+  "verdict": "INCOMPLETE",
+  "mode": "gsi",
+  "approx_tol": "1e-6",
+  "acc_tol": 9.999999999999999e-06
+ }
+]

@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
+# A small server that lets the Python benchmark drive solidcore
+# (https://github.com/tangency-labs/solidcore, Apache-2.0).
+# Set SOLIDCORE to a checkout and build with:
+#   sed "s#SOLIDCORE#$SOLIDCORE#" Cargo.toml > /tmp/Cargo.toml   (or edit the path below)
+[package]
+name = "solidcore-server"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+solidcore-ops = { path = "SOLIDCORE/crates/solidcore-ops" }
+serde_json = "1"
+
+[profile.release]
+debug = false

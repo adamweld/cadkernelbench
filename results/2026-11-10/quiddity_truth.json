@@ -1,0 +1,849 @@
+{
+ "part_000.step": {
+  "through_holes": [
+   5.66
+  ],
+  "blind_holes": [
+   5.36,
+   8.56,
+   4.16
+  ],
+  "pockets": 1,
+  "bosses": [],
+  "corner_fillets": 4
+ },
+ "part_001.step": {
+  "through_holes": [
+   9.52
+  ],
+  "blind_holes": [],
+  "pockets": 0,
+  "bosses": [],
+  "corner_fillets": 0
+ },
+ "part_002.step": {
+  "through_holes": [],
+  "blind_holes": [
+   7.78
+  ],
+  "pockets": 1,
+  "bosses": [
+   11.9,
+   12.22
+  ],
+  "corner_fillets": 4
+ },
+ "part_003.step": {
+  "through_holes": [],
+  "blind_holes": [
+   13.66
+  ],
+  "pockets": 1,
+  "bosses": [
+   14.62,
+   16.28
+  ],
+  "corner_fillets": 4
+ },
+ "part_004.step": {
+  "through_holes": [
+   11.46
+  ],
+  "blind_holes": [
+   10.78,
+   5.68,
+   9.72
+  ],
+  "pockets": 2,
+  "bosses": [
+   8.5,
+   12.72
+  ],
+  "corner_fillets": 0
+ },
+ "part_005.step": {
+  "through_holes": [
+   15.04,
+   7.26
+  ],
+  "blind_holes": [
+   5.38,
+   12.1
+  ],
+  "pockets": 0,
+  "bosses": [
+   8.42,
+   15.32,
+   15.9
+  ],
+  "corner_fillets": 0
+ },
+ "part_006.step": {
+  "through_holes": [
+   15.42,
+   6.32,
+   6.42,
+   10.64,
+   12.08
+  ],
+  "blind_holes": [
+   12.26
+  ],
+  "pockets": 2,
+  "bosses": [
+   11.84
+  ],
+  "corner_fillets": 4
+ },
+ "part_007.step": {
+  "through_holes": [
+   12.5
+  ],
+  "blind_holes": [
+   12.76
+  ],
+  "pockets": 0,
+  "bosses": [
+   8.84
+  ],
+  "corner_fillets": 0
+ },
+ "part_008.step": {
+  "through_holes": [],
+  "blind_holes": [
+   6.76,
+   15.32
+  ],
+  "pockets": 1,
+  "bosses": [
+   16.26
+  ],
+  "corner_fillets": 4
+ },
+ "part_009.step": {
+  "through_holes": [
+   5.34,
+   7.08
+  ],
+  "blind_holes": [],
+  "pockets": 1,
+  "bosses": [
+   17.02,
+   11.4
+  ],
+  "corner_fillets": 4
+ },
+ "part_010.step": {
+  "through_holes": [
+   6.94
+  ],
+  "blind_holes": [
+   12.12,
+   8.02,
+   4.76,
+   7.3
+  ],
+  "pockets": 1,
+  "bosses": [
+   10.42,
+   9.54,
+   16.42,
+   17.04,
+   7.14
+  ],
+  "corner_fillets": 0
+ },
+ "part_011.step": {
+  "through_holes": [],
+  "blind_holes": [],
+  "pockets": 2,
+  "bosses": [
+   11.98
+  ],
+  "corner_fillets": 0
+ },
+ "part_012.step": {
+  "through_holes": [
+   15.76
+  ],
+  "blind_holes": [
+   12.56,
+   4.2
+  ],
+  "pockets": 5,
+  "bosses": [
+   14.84,
+   8.34
+  ],
+  "corner_fillets": 4
+ },
+ "part_013.step": {
+  "through_holes": [],
+  "blind_holes": [
+   14.08,
+   12.34,
+   4.44,
+   4.62,
+   8.36
+  ],
+  "pockets": 1,
+  "bosses": [],
+  "corner_fillets": 0
+ },
+ "part_014.step": {
+  "through_holes": [
+   4.96
+  ],
+  "blind_holes": [],
+  "pockets": 3,
+  "bosses": [
+   17.6,
+   7.86
+  ],
+  "corner_fillets": 0
+ },
+ "part_015.step": {
+  "through_holes": [
+   14.28,
+   4.7,
+   13.12,
+   4.82,
+   10.12
+  ],
+  "blind_holes": [
+   8.56
+  ],
+  "pockets": 2,
+  "bosses": [
+   13.42
+  ],
+  "corner_fillets": 4
+ },
+ "part_016.step": {
+  "through_holes": [
+   5.84,
+   8.54
+  ],
+  "blind_holes": [],
+  "pockets": 2,
+  "bosses": [
+   6.86
+  ],
+  "corner_fillets": 4
+ },
+ "part_017.step": {
+  "through_holes": [
+   14.7,
+   11.8,
+   6.92
+  ],
+  "blind_holes": [],
+  "pockets": 1,
+  "bosses": [
+   13.58,
+   12.96,
+   12.8
+  ],
+  "corner_fillets": 0
+ },
+ "part_018.step": {
+  "through_holes": [
+   9.42
+  ],
+  "blind_holes": [
+   6.52,
+   13.68,
+   6.26,
+   6.9
+  ],
+  "pockets": 1,
+  "bosses": [
+   14.4
+  ],
+  "corner_fillets": 4
+ },
+ "part_019.step": {
+  "through_holes": [],
+  "blind_holes": [
+   4.38,
+   13.28
+  ],
+  "pockets": 2,
+  "bosses": [
+   17.98,
+   9.16
+  ],
+  "corner_fillets": 4
+ },
+ "part_020.step": {
+  "through_holes": [
+   9.06,
+   7.64
+  ],
+  "blind_holes": [
+   15.86,
+   15.34
+  ],
+  "pockets": 4,
+  "bosses": [
+   16.7,
+   16.42
+  ],
+  "corner_fillets": 4
+ },
+ "part_021.step": {
+  "through_holes": [],
+  "blind_holes": [],
+  "pockets": 2,
+  "bosses": [
+   12.24
+  ],
+  "corner_fillets": 0
+ },
+ "part_022.step": {
+  "through_holes": [
+   4.22,
+   13.3,
+   11.08
+  ],
+  "blind_holes": [
+   8.68,
+   11.0,
+   7.66
+  ],
+  "pockets": 0,
+  "bosses": [
+   17.46,
+   9.66,
+   13.84,
+   14.54
+  ],
+  "corner_fillets": 0
+ },
+ "part_023.step": {
+  "through_holes": [
+   14.4,
+   13.46
+  ],
+  "blind_holes": [],
+  "pockets": 0,
+  "bosses": [
+   12.54,
+   6.9,
+   6.9
+  ],
+  "corner_fillets": 4
+ },
+ "part_024.step": {
+  "through_holes": [
+   15.16
+  ],
+  "blind_holes": [
+   12.62,
+   13.2
+  ],
+  "pockets": 2,
+  "bosses": [
+   9.88
+  ],
+  "corner_fillets": 4
+ },
+ "part_025.step": {
+  "through_holes": [
+   9.24,
+   6.92,
+   7.54
+  ],
+  "blind_holes": [
+   15.88,
+   7.54
+  ],
+  "pockets": 1,
+  "bosses": [
+   7.14,
+   10.4,
+   8.44
+  ],
+  "corner_fillets": 0
+ },
+ "part_026.step": {
+  "through_holes": [],
+  "blind_holes": [
+   15.84
+  ],
+  "pockets": 2,
+  "bosses": [
+   17.02,
+   11.76
+  ],
+  "corner_fillets": 4
+ },
+ "part_027.step": {
+  "through_holes": [
+   4.42,
+   11.7
+  ],
+  "blind_holes": [],
+  "pockets": 0,
+  "bosses": [
+   6.52
+  ],
+  "corner_fillets": 0
+ },
+ "part_028.step": {
+  "through_holes": [
+   7.78,
+   14.84,
+   15.92,
+   6.12
+  ],
+  "blind_holes": [
+   9.28
+  ],
+  "pockets": 1,
+  "bosses": [],
+  "corner_fillets": 4
+ },
+ "part_029.step": {
+  "through_holes": [
+   11.16
+  ],
+  "blind_holes": [
+   15.04
+  ],
+  "pockets": 1,
+  "bosses": [
+   9.72
+  ],
+  "corner_fillets": 0
+ },
+ "part_030.step": {
+  "through_holes": [
+   7.44,
+   11.54,
+   7.48
+  ],
+  "blind_holes": [
+   13.34,
+   6.62
+  ],
+  "pockets": 1,
+  "bosses": [
+   12.9,
+   13.02,
+   17.3,
+   15.32,
+   14.28
+  ],
+  "corner_fillets": 0
+ },
+ "part_031.step": {
+  "through_holes": [
+   15.32,
+   7.76
+  ],
+  "blind_holes": [],
+  "pockets": 0,
+  "bosses": [
+   12.02
+  ],
+  "corner_fillets": 4
+ },
+ "part_032.step": {
+  "through_holes": [
+   11.38,
+   12.84,
+   13.28,
+   6.26
+  ],
+  "blind_holes": [
+   15.36,
+   12.42,
+   14.42
+  ],
+  "pockets": 3,
+  "bosses": [
+   14.64
+  ],
+  "corner_fillets": 4
+ },
+ "part_033.step": {
+  "through_holes": [
+   15.82,
+   5.7
+  ],
+  "blind_holes": [
+   13.56,
+   14.5
+  ],
+  "pockets": 1,
+  "bosses": [],
+  "corner_fillets": 4
+ },
+ "part_034.step": {
+  "through_holes": [
+   10.12,
+   4.9,
+   15.3,
+   5.38,
+   13.66
+  ],
+  "blind_holes": [
+   12.68,
+   11.66,
+   6.28,
+   7.66
+  ],
+  "pockets": 1,
+  "bosses": [
+   6.7
+  ],
+  "corner_fillets": 4
+ },
+ "part_035.step": {
+  "through_holes": [],
+  "blind_holes": [
+   14.62
+  ],
+  "pockets": 1,
+  "bosses": [
+   13.94
+  ],
+  "corner_fillets": 4
+ },
+ "part_036.step": {
+  "through_holes": [
+   7.04,
+   8.1,
+   5.64,
+   10.88,
+   6.46
+  ],
+  "blind_holes": [
+   14.08,
+   15.34
+  ],
+  "pockets": 1,
+  "bosses": [
+   10.1
+  ],
+  "corner_fillets": 0
+ },
+ "part_037.step": {
+  "through_holes": [
+   8.4,
+   4.08
+  ],
+  "blind_holes": [],
+  "pockets": 2,
+  "bosses": [
+   8.82,
+   15.02
+  ],
+  "corner_fillets": 4
+ },
+ "part_038.step": {
+  "through_holes": [
+   12.24,
+   13.92
+  ],
+  "blind_holes": [
+   10.48
+  ],
+  "pockets": 1,
+  "bosses": [],
+  "corner_fillets": 0
+ },
+ "part_039.step": {
+  "through_holes": [
+   7.54,
+   11.0,
+   10.24
+  ],
+  "blind_holes": [
+   9.38,
+   4.06
+  ],
+  "pockets": 2,
+  "bosses": [
+   6.62
+  ],
+  "corner_fillets": 0
+ },
+ "part_040.step": {
+  "through_holes": [
+   10.98
+  ],
+  "blind_holes": [
+   8.22,
+   11.44,
+   8.52
+  ],
+  "pockets": 4,
+  "bosses": [
+   9.58,
+   7.04,
+   17.14
+  ],
+  "corner_fillets": 4
+ },
+ "part_041.step": {
+  "through_holes": [
+   8.88
+  ],
+  "blind_holes": [
+   5.0
+  ],
+  "pockets": 3,
+  "bosses": [
+   7.92
+  ],
+  "corner_fillets": 0
+ },
+ "part_042.step": {
+  "through_holes": [
+   15.24
+  ],
+  "blind_holes": [],
+  "pockets": 2,
+  "bosses": [],
+  "corner_fillets": 4
+ },
+ "part_043.step": {
+  "through_holes": [
+   14.12
+  ],
+  "blind_holes": [
+   6.44
+  ],
+  "pockets": 1,
+  "bosses": [
+   16.08
+  ],
+  "corner_fillets": 4
+ },
+ "part_044.step": {
+  "through_holes": [],
+  "blind_holes": [
+   15.26,
+   5.54,
+   4.6
+  ],
+  "pockets": 1,
+  "bosses": [
+   6.44
+  ],
+  "corner_fillets": 4
+ },
+ "part_045.step": {
+  "through_holes": [
+   8.26
+  ],
+  "blind_holes": [
+   12.1,
+   10.14,
+   8.06,
+   12.5
+  ],
+  "pockets": 2,
+  "bosses": [
+   10.46,
+   14.5
+  ],
+  "corner_fillets": 0
+ },
+ "part_046.step": {
+  "through_holes": [
+   6.98
+  ],
+  "blind_holes": [
+   10.82,
+   10.66
+  ],
+  "pockets": 1,
+  "bosses": [
+   11.62
+  ],
+  "corner_fillets": 0
+ },
+ "part_047.step": {
+  "through_holes": [
+   14.92,
+   7.82
+  ],
+  "blind_holes": [
+   4.02,
+   8.76
+  ],
+  "pockets": 3,
+  "bosses": [
+   10.22
+  ],
+  "corner_fillets": 0
+ },
+ "part_048.step": {
+  "through_holes": [],
+  "blind_holes": [
+   12.44
+  ],
+  "pockets": 1,
+  "bosses": [
+   11.9,
+   11.64,
+   12.2,
+   17.64
+  ],
+  "corner_fillets": 0
+ },
+ "part_049.step": {
+  "through_holes": [
+   15.52
+  ],
+  "blind_holes": [
+   6.58
+  ],
+  "pockets": 3,
+  "bosses": [
+   15.56
+  ],
+  "corner_fillets": 0
+ },
+ "part_050.step": {
+  "through_holes": [
+   6.92,
+   9.36
+  ],
+  "blind_holes": [
+   7.08
+  ],
+  "pockets": 1,
+  "bosses": [],
+  "corner_fillets": 0
+ },
+ "part_051.step": {
+  "through_holes": [
+   15.3
+  ],
+  "blind_holes": [
+   13.58,
+   6.86,
+   10.22
+  ],
+  "pockets": 1,
+  "bosses": [
+   14.76
+  ],
+  "corner_fillets": 0
+ },
+ "part_052.step": {
+  "through_holes": [
+   15.36
+  ],
+  "blind_holes": [
+   15.2,
+   11.46
+  ],
+  "pockets": 1,
+  "bosses": [
+   7.56,
+   15.6,
+   14.48,
+   11.52
+  ],
+  "corner_fillets": 4
+ },
+ "part_053.step": {
+  "through_holes": [
+   4.26
+  ],
+  "blind_holes": [
+   12.24,
+   7.26
+  ],
+  "pockets": 1,
+  "bosses": [],
+  "corner_fillets": 0
+ },
+ "part_054.step": {
+  "through_holes": [
+   6.84
+  ],
+  "blind_holes": [
+   13.6,
+   15.44
+  ],
+  "pockets": 5,
+  "bosses": [],
+  "corner_fillets": 4
+ },
+ "part_055.step": {
+  "through_holes": [
+   5.84,
+   15.22
+  ],
+  "blind_holes": [],
+  "pockets": 2,
+  "bosses": [],
+  "corner_fillets": 0
+ },
+ "part_056.step": {
+  "through_holes": [
+   13.96,
+   12.38,
+   10.94
+  ],
+  "blind_holes": [
+   15.76
+  ],
+  "pockets": 4,
+  "bosses": [
+   14.7
+  ],
+  "corner_fillets": 4
+ },
+ "part_057.step": {
+  "through_holes": [
+   14.02,
+   14.88
+  ],
+  "blind_holes": [
+   14.8
+  ],
+  "pockets": 0,
+  "bosses": [
+   7.86
+  ],
+  "corner_fillets": 0
+ },
+ "part_058.step": {
+  "through_holes": [
+   14.56
+  ],
+  "blind_holes": [],
+  "pockets": 3,
+  "bosses": [
+   8.2
+  ],
+  "corner_fillets": 0
+ },
+ "part_059.step": {
+  "through_holes": [
+   5.66,
+   14.2,
+   5.96
+  ],
+  "blind_holes": [
+   12.76,
+   12.4,
+   9.6,
+   10.88,
+   8.56,
+   15.3
+  ],
+  "pockets": 0,
+  "bosses": [
+   9.8
+  ],
+  "corner_fillets": 0
+ }
+}
