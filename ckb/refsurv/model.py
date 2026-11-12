@@ -183,8 +183,9 @@ class Pieces:
         """A local point well inside a piece: a cell far from the piece's edge."""
         member = self.labels == piece
         if self.grid.periodic:
-            padded = np.concatenate([member[-3:], member, member[:3]])
-            depth = ndimage.distance_transform_cdt(padded)[3:-3]
+            # Wrapped round the seam, and closed off at the two ends, which are real edges.
+            padded = np.pad(np.concatenate([member[-3:], member, member[:3]]), ((0, 0), (1, 1)))
+            depth = ndimage.distance_transform_cdt(padded)[3:-3, 1:-1]
         else:
             depth = ndimage.distance_transform_cdt(np.pad(member, 1))[1:-1, 1:-1]
         deep = np.argwhere(depth >= max(1, int(depth.max() * 0.5)))
