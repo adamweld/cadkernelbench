@@ -78,13 +78,13 @@ Two differences in method, both forced by what SMLib's Python interface offers:
 | Set | Pairs | OCCT: pairs with any failure | SMLib: pairs with any failure |
 |---|---|---|---|
 | Near-degenerate, all families except the tangent hole | 1,800 | 2 | 1 |
-| Tangent hole, offset of one micron or less | 180 | 0 | 180 |
+| Tangent hole, offset of 1 nm or less | 180 | 0 | 180 |
 | Tangent hole, larger offset | 120 | 0 | 1 |
 | Generic position | 282 | 0 | 0 |
 
 - OCCT's two failures are a sphere exactly touching a face, united with the block, whose exact result is not a manifold solid.
-- SMLib's one failure outside the tangent-hole family is a wrong solid: a sphere sunk one micron into a face, united with the block, where one sample point was misclassified.
-- **The tangent-hole split is a difference in tolerance, not a clear defect in either.** Within a micron the wall is thinner than SMLib's working tolerance, and SMLib returns a result that is not a closed solid. OCCT works to a tighter tolerance and returns a solid with a wall a few nanometres thick. Neither answer is obviously the right one for a designer.
+- SMLib's one failure outside the tangent-hole family is a wrong solid: a sphere sunk 1 nm into a face, united with the block, where one sample point was misclassified.
+- **The tangent-hole split is a difference in tolerance, not a clear defect in either.** At 1 nm or less the wall is thinner than SMLib's working tolerance, and SMLib returns a result that is not a closed solid. OCCT works to a tighter tolerance and returns a solid with a wall at most 1 nm thick. Neither answer is obviously the right one for a designer.
 - The generic set was stopped at 282 pairs because SMLib's run was slow there. The time went into tessellating results for the point test, not into its booleans.
 
 ### Feature sequences
@@ -120,7 +120,7 @@ The release build took 4 minutes on this machine. Its largest compiler process p
 
 ### Validating the instrument first
 
-- **Placement.** After placement, the bounding boxes of boxes, cylinders and cones agree with OCCT's to 1e-7. Spheres and tori come out tighter than OCCT's, which pads curved surfaces.
+- **Placement.** After placement, the bounding boxes of boxes, cylinders and cones agree with OCCT's to 1e-7, and with the exact boxes to 1e-13 (`results/2026-11-12/validate_solidcore.txt`). solidcore's sphere boxes are up to 1.2 mm off the exact box, and smaller than it for 3 of 117 spheres. Bounding boxes only choose where sample points are drawn, so a box that is too small leaves part of a solid untested but does not change how any point is judged. (An earlier version of this page said solidcore's sphere and torus boxes were tighter than OCCT's; that was wrong.)
 - **solidcore's own point classification failed validation and is not used.** `Body::classify_point` disagreed with the closed-form test on 2,431 of 80,855 points. Of those, 2,422 are on tori (explained below). The other 9 are on spheres, cones and a cylinder that solidcore's own check accepts. They include a point 1.08 mm outside a sphere of radius 6.75 that it called inside. The answers are the same on every call, and OCCT agrees with the closed form on all 9. At that rate, about 6% of boolean pairs would have been scored as a wrong solid because of the classifier, not the boolean.
 - **The classifier used instead** is the generalised winding number about solidcore's own tessellation of each result (`solidcore-tess`, 3 µm chord, inside the 10 µm band). This is the same method and the same thresholds as the SMLib run. On 67,679 points on boxes, cylinders, spheres and cones it gave 0 disagreements and 0 undecided. Tori could not be validated (finding 1).
 - **Validity** means both that solidcore's own check passes (`Body::check` at the geometry level) and that the body is a closed manifold solid. The two verdicts are recorded separately.
@@ -147,7 +147,7 @@ Pairs with any failure:
 | Set | Pairs | OCCT | SMLib | solidcore | cadrs |
 |---|---|---|---|---|---|
 | Near-degenerate, all families except the tangent hole | 1,800 | 0 | 1 | 78 | 66 |
-| Tangent hole, offset of one micron or less | 180 | 0 | 180 | 180 | 81 |
+| Tangent hole, offset of 1 nm or less | 180 | 0 | 180 | 180 | 81 |
 | Tangent hole, larger offset | 120 | 0 | 1 | 9 | 0 |
 | Generic position, no torus | 386 | 0 | 0 of 188 | 0 | 0 |
 | Generic position, with a torus (finding 1) | 214 | 0 | 0 of 94 | 160 | 1 |
@@ -158,9 +158,9 @@ Pairs with any failure:
 | Generic position, no torus | 1,158 | 0 | 0 | 0 |
 | Generic position, with a torus | 642 | 0 | 243 | 147 |
 
-- **Tangent hole within a micron.** solidcore refuses all 180 pairs with `NotSolid`, which is its own check that a boolean of solids must give a closed body. SMLib returned an open body for the same 180, and OCCT returned a solid with a wall a few nanometres thick. solidcore's refusal is the more useful answer. The 9 larger-offset failures are all at an offset of −0.1 mm, where the hole breaks 0.1 mm through the wall. They are 8 `Status(1007)` and 1 `Status(1001)`.
-- **Cylinder axis on a box edge**: 41 unions refused with `NotSolid`. These are all 20 pairs at an offset of −10 µm, all 20 at −1 µm, and 1 at −0.1 µm, with the axis just outside the edge. SMLib had no failure in this family.
-- **Faces 10 µm apart, which is solidcore's tolerance.** Stacked and flush blocks at an offset of exactly ±1e-5 gave 25 results solidcore's check rejects for vertex-to-face gaps of 1e-5 against a tolerance of 1e-5. A sphere sunk 10 µm into a face, then subtracted, gave 20 more with a face loop of zero area.
+- **Tangent hole within 1 nm.** solidcore refuses all 180 pairs with `NotSolid`, which is its own check that a boolean of solids must give a closed body. SMLib returned an open body for the same 180, and OCCT returned a solid with a wall at most 1 nm thick. solidcore's refusal is the more useful answer. The 9 larger-offset failures are all at an offset of −0.1 µm, where the hole breaks 0.1 µm through the wall. They are 8 `Status(1007)` and 1 `Status(1001)`.
+- **Cylinder axis on a box edge**: 41 unions refused with `NotSolid`. These are all 20 pairs at an offset of −10 nm, all 20 at −1 nm, and 1 at −0.1 nm, with the axis just outside the edge. SMLib had no failure in this family.
+- **Faces 10 nm apart, which is solidcore's tolerance.** Stacked and flush blocks at an offset of exactly ±1e-5 gave 25 results solidcore's check rejects for vertex-to-face gaps of 1e-5 against a tolerance of 1e-5. A sphere sunk 10 nm into a face, then subtracted, gave 20 more with a face loop of zero area.
 - **No near-degenerate or torus-free generic boolean returned a wrong solid.** The 1,158 torus-free generic operations were all correct.
 - OCCT's two failures in the earlier run, the tangent sphere united with the block, passed on this machine. Of the 2,682 rows the two OCCT runs share, 7 differ: these 2, and 5 final fillets in the sequences. All twelve booleans of every sequence match.
 
