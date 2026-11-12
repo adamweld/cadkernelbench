@@ -87,15 +87,30 @@ def build(model):
     return state
 
 
+def _on(face, p):
+    """Whether a point lies on a face: on its surface, and inside its boundary."""
+    surface = face.Surface
+    u, v = surface.parameter(p)
+    if surface.value(u, v).distanceToPoint(p) > 1e-6:
+        return False
+    u0, u1 = face.ParameterRange[:2]
+    if surface.isUPeriodic():
+        period = surface.UPeriod()
+        while u < u0:
+            u += period
+        while u > u1:
+            u -= period
+    return face.isPartOfDomain(u, v)
+
+
 def pick(state, point):
     import FreeCAD as App
-    import Part
-    body, v = state["body"], Part.Vertex(App.Vector(*point))
+    body, p = state["body"], App.Vector(*point)
     found = []
     for i, f in enumerate(body.Shape.Faces, 1):
         box = f.BoundBox
         box.enlarge(1e-3)
-        if box.isInside(App.Vector(*point)) and f.distToShape(v)[0] < 1e-6:
+        if box.isInside(p) and _on(f, p):
             found.append(i)
     if len(found) != 1:
         return None
