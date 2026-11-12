@@ -1,0 +1,3 @@
+540 solids, 80861 points compared, 0 undecided, 0 disagreements
+  points compared by kind: {'torus': 13179, 'sph': 17511, 'cone': 10481, 'cyl': 14967, 'box': 24723}
+exit status 0
