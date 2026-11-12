@@ -20,7 +20,7 @@ No second kernel is used as a reference. Every input is an analytic primitive, s
 
 A result is counted as **error** if the kernel reported failure, **invalid** if it returned a solid that fails its own check, and **wrong** if it returned a valid-looking solid that misclassifies a point or is empty when it cannot be. Wrong is the worst outcome, because nothing tells the user.
 
-The closed-form inside tests were themselves validated against each kernel on the input primitives before use: 23,954 points with OCCT and 2,397 with SMLib, with no disagreement. `python -m ckb.validate` repeats this for any adapter; on 2026-11-11 it compared 80,861 points with OCCT and 67,679 with solidcore, again with no disagreement. solidcore's own point classification failed this test and is not used (see [RESULTS.md](RESULTS.md)).
+The closed-form inside tests were themselves validated against each kernel on the input primitives before use: 23,954 points with OCCT and 2,397 with SMLib, with no disagreement. `python -m ckb.validate` repeats this for any adapter; on 2026-11-11 it compared 80,861 points with OCCT and 67,679 with solidcore, and on 2026-11-12 80,862 with cadrs, again with no disagreement. It also compares each kernel's bounding boxes after placement with the exact boxes, computed in closed form. solidcore's own point classification failed this test and is not used (see [RESULTS.md](RESULTS.md)).
 
 Points a kernel declines to classify are counted per result as `undecided`, so a classifier that answers nothing cannot pass silently.
 
