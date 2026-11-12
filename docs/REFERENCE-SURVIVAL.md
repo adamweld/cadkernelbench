@@ -91,14 +91,30 @@ How these should be weighed is a judgement about what a designer wants, and is l
 
 ## Systems measured
 
-Both are built on OCCT for this suite. Neither is a product.
+Two are built on OCCT for this suite and are not products. The third is FreeCAD.
 
 | System | A reference is | Why it is here |
 |---|---|---|
 | [`occt_index`](../ckb/refsurv/systems/occt_index.py) | The face's position in the kernel's list of faces | The floor: the scheme with no naming at all |
 | [`occt_history`](../ckb/refsurv/systems/occt_history.py) | A name given to each primitive face when it is made, and carried through every Boolean by what OCCT reports became of the face | The plainest scheme that can be built on a kernel's own history. It measures how far that history goes |
 
+| [`freecad_partdesign`](../ckb/refsurv/systems/freecad_partdesign.py) | A link from another object in the document to a face of a PartDesign body, which FreeCAD rewrites itself on every recompute | An existing product's own scheme, measured as shipped |
+
 `occt_history` returns every face that carries the name, so on a divided face it always answers "all pieces".
+
+### How FreeCAD is driven
+
+FreeCAD 1.1.4, from the project's Linux AppImage, without its window.
+
+- The model is a PartDesign body of additive and subtractive boxes, cylinders and spheres, with FreeCAD's default settings. That includes "refine", which merges faces lying on one surface after each feature.
+- A reference is an `App::PropertyLinkSub` to a face of the body, on an object added to the document for the purpose. It is the property FreeCAD's own features use to refer to geometry.
+- An edit is made as a user makes it: a property is changed, or a feature is added at a place in the body's tree, deleted, or moved. The document is recomputed. Unlike the two OCCT systems, the model is not rebuilt from nothing.
+- The link is read back. FreeCAD has by then rewritten it to the face's new name, or marked it with "?" where it judges the face missing. The adapter reports the first as found and the second as lost. It does no naming, matching or repair of its own.
+
+Two things about this arrangement should be kept in mind:
+
+- The link is to the body, not to one feature in it. Inside a body, FreeCAD's own features usually refer to a face of the feature just before them. A link to the body is what an object outside the body holds, such as a part in an assembly or a drawing view, and it is the only kind that can be asked about the finished model.
+- The adapter was checked for building the right solid: on sampled cases the body's volume agrees with the closed form to within sampling error, and a body after edits is identical in volume and face count to one built afresh.
 
 ## Adding a system
 
@@ -126,6 +142,12 @@ End the module as the two existing ones do, and it runs under the same isolating
 .venv-occt/bin/python -m ckb.refsurv.systems.occt_history --summarise refsurv_history.jsonl
 ```
 
+FreeCAD runs under the Python inside its own AppImage, unpacked with `--appimage-extract`:
+
+```bash
+squashfs-root/usr/bin/python -m ckb.refsurv.systems.freecad_partdesign --out refsurv_freecad.jsonl --jobs 4
+```
+
 The environment is the OCCT one from [RUNNING.md](RUNNING.md), which already has numpy and scipy. The 200-feature cases take about two minutes each.
 
 ## What this does not measure
@@ -136,10 +158,10 @@ The environment is the OCCT one from [RUNNING.md](RUNNING.md), which already has
 - **Patterns.** Changing the count of a pattern is not among the edits.
 - **Real engineering models.** Generated models are not designed. The suite can show that a scheme fails on generated models of realistic depth. It cannot show that a scheme works on real ones.
 - **Intent.** A reference can resolve to the geometrically correct face and still not be the one the designer would have wanted after a large redesign.
-- **Any existing CAD product.** FreeCAD and SolidCraft both have naming schemes and are the systems this suite was designed to measure. Neither has been run.
+- **Any commercial CAD product, or SolidCraft.** SolidCraft has a naming scheme this suite was designed to measure and has not been run. FreeCAD is measured through its Part Design primitives only, not through sketches, pads and pockets, which is how most FreeCAD models are made.
 
 ## Known limits of the method
 
 - The piece that "contains the place originally picked" is a rule chosen for being objective. It is not the only reasonable one. A rule based on which neighbouring faces bound a piece was proposed first and has not been built.
 - Model sizes above 200 features have not been tried.
-- The two systems rebuild the model from nothing after an edit. A system that keeps state between rebuilds, as a CAD application does, is exercised differently by class J.
+- The two OCCT systems rebuild the model from nothing after an edit, so class J cannot fail for them unless the kernel is not repeatable. FreeCAD keeps its document between rebuilds, and class J is a real test of it.
