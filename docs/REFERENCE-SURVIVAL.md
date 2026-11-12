@@ -148,7 +148,7 @@ FreeCAD runs under the Python inside its own AppImage, unpacked with `--appimage
 squashfs-root/usr/bin/python -m ckb.refsurv.systems.freecad_partdesign --out refsurv_freecad.jsonl --jobs 4
 ```
 
-The environment is the OCCT one from [RUNNING.md](RUNNING.md), which already has numpy and scipy. The 200-feature cases take about two minutes each.
+The environment is the OCCT one from [RUNNING.md](RUNNING.md), which already has numpy and scipy. The 200-feature cases take about two minutes each for the OCCT systems and about 25 minutes each for FreeCAD, so give FreeCAD a long `--stall`.
 
 ## What this does not measure
 
@@ -164,4 +164,7 @@ The environment is the OCCT one from [RUNNING.md](RUNNING.md), which already has
 
 - The piece that "contains the place originally picked" is a rule chosen for being objective. It is not the only reasonable one. A rule based on which neighbouring faces bound a piece was proposed first and has not been built.
 - Model sizes above 200 features have not been tried.
+- Pieces are counted on a sampling grid. Two parts of a face joined by a neck narrower than the grid are counted as two pieces, and a sliver smaller than the grid is not counted at all. In the first full run this misjudged 5 references of 7,920 as "not all pieces" and left 19 unscored. Both show up against a system that is otherwise exact, and are small beside any real effect.
+- The method takes the solid a system builds to be the solid modelled. It does not check. Where a system builds a wrong solid without reporting an error, the picks fail and the case shows up as "pick failed". That happened once for OCCT and once for FreeCAD in the first run.
+- The FreeCAD link is held by a scripted object, not by one of FreeCAD's built-in features. Both use the same link property, but a built-in feature may treat a stale link differently.
 - The two OCCT systems rebuild the model from nothing after an edit, so class J cannot fail for them unless the kernel is not repeatable. FreeCAD keeps its document between rebuilds, and class J is a real test of it.

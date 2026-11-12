@@ -288,4 +288,105 @@ Reading:
 
 ## Reference survival
 
-Method and outcome names are in [REFERENCE-SURVIVAL.md](REFERENCE-SURVIVAL.md). The first full run of the two OCCT-based systems is in progress; no figures are published yet.
+Method and outcome names are in [REFERENCE-SURVIVAL.md](REFERENCE-SURVIVAL.md). Run on 2026-11-12 with OCCT 8.0.1 and FreeCAD 1.1.4. Raw results and the full table for each system, by class of edit and model size, are in [`results/2026-11-12/`](../results/2026-11-12/).
+
+990 cases, 8 references each where 8 well-posed ones could be found (7,920 references; 354 candidates passed over). Models have 10, 50 or 200 features.
+
+| System | Cases completed | Notes |
+|---|---|---|
+| `occt_index` | 990 of 990 | |
+| `occt_history` | 990 of 990 | |
+| `freecad_partdesign` | 540 of 540 at 10 features, 358 of 360 at 50, 1 of 11 tried at 200 | See "FreeCAD at 200 features" below |
+
+### Where the face is still there, in one piece
+
+This is the common case, and the one where "silent wrong" does the most harm.
+
+| System | Features | References | Correct | Silent wrong | False loss |
+|---|---|---|---|---|---|
+| `occt_index` | 10 | 3,981 | 2,558 (64.3%) | 1,400 (35.2%) | 23 (0.6%) |
+| `occt_index` | 50 | 2,545 | 1,432 (56.3%) | 1,107 (43.5%) | 6 (0.2%) |
+| `occt_index` | 200 | 614 | 309 (50.3%) | 305 (49.7%) | 0 |
+| `occt_history` | 10 | 3,977 | 3,977 (100%) | 0 | 0 |
+| `occt_history` | 50 | 2,540 | 2,540 (100%) | 0 | 0 |
+| `occt_history` | 200 | 612 | 612 (100%) | 0 | 0 |
+| `freecad_partdesign` | 10 | 3,983 | 3,751 (94.2%) | 0 | 232 (5.8%) |
+| `freecad_partdesign` | 50 | 2,525 | 2,346 (92.9%) | 44 (1.7%) | 135 (5.3%) |
+
+The counts differ slightly between systems because references that could not be judged are left out (see "Rows not judged").
+
+By class of edit, at 10 and 50 features together, which all three systems completed:
+
+| Edit | `occt_index` correct | silent wrong | `occt_history` correct | silent wrong | `freecad_partdesign` correct | silent wrong | false loss |
+|---|---|---|---|---|---|---|---|
+| A: dimension change | 92.0% | 61 | 100% | 0 | 99.1% | 0 | 7 |
+| B: feature appended | 41.0% | 464 | 100% | 0 | 95.7% | 24 | 10 |
+| C: feature moved | 60.6% | 302 | 100% | 0 | 90.6% | 0 | 72 |
+| D: slot cut through (split) | 16.3% | 452 | 100% | 0 | 89.0% | 0 | 60 |
+| E: slot shortened (merge) | 18.4% | 592 | 100% | 0 | 77.1% | 1 | 167 |
+| F: feature removed | 56.3% | 242 | 100% | 0 | 99.0% | 0 | 6 |
+| G: feature inserted upstream | 51.4% | 377 | 100% | 0 | 97.7% | 13 | 5 |
+| H: two features reordered | 97.8% | 17 | 100% | 0 | 100% | 0 | 0 |
+| J: edit made and undone | 100% | 0 | 100% | 0 | 94.1% | 6 | 40 |
+
+Each class has between 545 and 790 references per system.
+
+### Where the face is gone
+
+| System | Features | References | Correctly lost | Silent wrong |
+|---|---|---|---|---|
+| `occt_index` | 10 | 176 | 16 | 160 |
+| `occt_index` | 50 | 117 | 0 | 117 |
+| `occt_index` | 200 | 27 | 0 | 27 |
+| `occt_history` | 10 | 176 | 176 | 0 |
+| `occt_history` | 50 | 117 | 117 | 0 |
+| `occt_history` | 200 | 27 | 27 | 0 |
+| `freecad_partdesign` | 10 | 176 | 176 | 0 |
+| `freecad_partdesign` | 50 | 117 | 115 | 2 |
+
+### Where the surface now bounds the solid in several pieces
+
+No response here is called right or wrong, except a point on a different surface altogether, which is silent wrong.
+
+| System | Features | References | All pieces | One piece at pick | One piece elsewhere | Some pieces | Lost on split | Silent wrong |
+|---|---|---|---|---|---|---|---|---|
+| `occt_index` | 10 and 50 | 377 | 0 | 148 | 37 | 0 | 2 | 190 |
+| `occt_index` | 200 | 71 | 0 | 18 | 2 | 0 | 0 | 51 |
+| `occt_history` | 10 and 50 | 375 | 371 | 3 | 0 | 1 | 0 | 0 |
+| `occt_history` | 200 | 69 | 68 | 1 | 0 | 0 | 0 | 0 |
+| `freecad_partdesign` | 10 and 50 | 376 | 0 | 238 | 27 | 0 | 106 | 5 |
+
+The five `occt_history` rows that are not "all pieces" were each checked by hand. In all five the history returned every face there was: the method had counted one face as two, because the two parts were joined by a neck narrower than its sampling grid. So `occt_history` returned every piece in every case.
+
+### Reading the reference-survival results
+
+1. **A reference with no naming is wrong about half the time, and says nothing.** A face's position in the kernel's list survives a dimension change (92%) and little else. When the face is deleted, the position almost always resolves to some other face. This is the floor, and it gets worse with model size.
+2. **OCCT's Boolean history, carried from one Boolean to the next, was exact on these models.** Of 7,129 references to a face that survived in one piece, all resolved to the right face. All 320 references to a deleted face were reported lost. Every piece of a divided face was returned. This held at 200 features as at 10. No naming scheme sits on top of it: only a label on each primitive face, moved to whatever OCCT says the face became.
+3. **That result is narrower than it looks.** The models are boxes, cylinders and spheres joined by Booleans, with no fillets, no sketches and no coincident faces, and every reference is to a face. It shows that kernel history is sufficient for Boolean-only models of this depth. It does not show it for fillets, where Parasolid's own documentation calls its lineage ambiguous, or for edges. And `occt_history` cannot say which piece of a divided face was meant; it returns them all.
+4. **FreeCAD loses references it need not lose.** About 5.6% of references to a face that is still there in one piece are reported lost. The loss is concentrated where a neighbouring feature changes the face's outline: a slot shortened (22.7% lost), a slot cut through (11.0%), a feature moved (9.4%). When a face is divided, FreeCAD reports the reference lost 28% of the time and otherwise follows one piece.
+5. **A FreeCAD reference lost by an edit stays lost when the edit is undone.** After a dimension is changed and changed back, 40 of 775 references are still reported lost though the model is what it was.
+6. **FreeCAD was silently wrong on 51 references, all in 50-feature models.** They fall in 14 of the 358 cases; none of the 540 ten-feature cases has one. In the cases examined, the solid FreeCAD built was the right one, the face numbering had shifted, and the link still held its old face number, so it pointed at a different face. Other links in the same model were renumbered correctly. Most are after a feature is added (40 of 51). The cause inside FreeCAD has not been found. One case examined twice gave a different number of stale links each time, so the behaviour may not be repeatable.
+7. **FreeCAD reported a deleted face as lost in 291 of 293 cases.**
+
+### Wrong solids found on the way
+
+The method needs the solid a system builds to be the solid modelled, and twice it was not, with no error from the system:
+
+- **OCCT, one 200-feature model of 90** (case 932). The result had 124 faces and the picked points lay 11 to 20 mm off it. All 8 picks failed, for both OCCT systems.
+- **FreeCAD, one 50-feature model of 360** (case 886). The body came out as three separate solids of about 9,100 mm³ in total. 7 of 8 picks failed.
+
+FreeCAD also failed to build 2 of the 360 fifty-feature models, reporting features in error.
+
+### FreeCAD at 200 features
+
+Not measured. A 200-feature case takes FreeCAD about 25 minutes, against about 2 minutes for the OCCT systems on the same models (both figures include the method's own checking). Of 11 cases tried, 1 completed in 1,446 s with all 8 references correct, 6 ran past the 1,500 s limit, 3 failed to rebuild with features in error, and 1 was lost to the fault in the adapter described next. The remaining 79 were not tried. Rebuild time is not what this suite measures, and the figure is given only to explain the gap.
+
+### Rows not judged
+
+- `occt_history`: 19 references unscored. Those examined were sliver faces (areas from 0.00002 to 0.02 mm²) that OCCT made beside the real face and that carry its name. They are too small for the method's grid to see, so the point returned on them cannot be judged.
+- `occt_index`: 4 unscored, for the same reason.
+- Both OCCT systems: 8 picks failed, all in case 932 above. FreeCAD: 7 picks failed, all in case 886 above.
+
+### A correction made during the FreeCAD run
+
+FreeCAD's `distToShape`, which the adapter first used to find the face under a picked point, throws an unknown C++ exception on some faces of 50-feature bodies. 34 cases at 50 features were first recorded as failures for that reason. The adapter now tests the point against each face's own surface and boundary, which agrees with the old test on all 432 references where the old test ran, and those 34 cases were run again. Their results are in the published file. 35 of FreeCAD's 51 silent-wrong references are in 11 of those 34 cases, and 16 are in 3 of the other 324, so the bodies that upset `distToShape` are also the ones where links go stale far more often. Why is not known.
