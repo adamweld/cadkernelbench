@@ -95,7 +95,7 @@ def main():
     for fam in m.NEAR_FAMILIES:
         row(f"- {fam}", [i for i in near if cases[i]["family"] == fam])
     tang = [i for i in near if cases[i]["family"] == "cyl_tangent_inside"]
-    row("- tangent hole, offset of one micron or less", [i for i in tang if abs(cases[i]["eps"]) <= 1e-6])
+    row("- tangent hole, offset of 1 nm or less", [i for i in tang if abs(cases[i]["eps"]) <= 1e-6])
     row("- tangent hole, larger offset", [i for i in tang if abs(cases[i]["eps"]) > 1e-6])
     gen = [i for i in common if cases[i]["kind"] == "generic"]
     tor = {i for i in gen if has_torus(cases[i])}
