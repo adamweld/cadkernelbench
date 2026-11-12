@@ -1,0 +1,4 @@
+540 solids, 67679 points compared, 0 undecided, 0 disagreements
+  points compared by kind: {'sph': 17508, 'cone': 10481, 'cyl': 14967, 'box': 24723}
+  88 torus solids the kernel would not classify against: Record("the body's tolerance is not finite and positive")
+exit status 1

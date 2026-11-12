@@ -250,7 +250,7 @@ def run_boolean_case(c):
     for op, x in res.items():
         shape = x.pop("shape", None)
         if shape is not None:
-            miss = 0
+            miss = undecided = 0
             solid = has_solid(shape)
             for g, a, b in pts:
                 want = expect[op](a, b)
@@ -259,9 +259,13 @@ def run_boolean_case(c):
                 except Exception as e:
                     reraise_unless_kernel(e)
                     got = None
-                if got is not None and got != want:
+                if got is None:          # on the boundary, or the kernel could not decide
+                    undecided += 1
+                elif got != want:
                     miss += 1
             x["miss"] = miss
+            if undecided:
+                x["undecided"] = undecided
             if miss and x["status"] == "ok":
                 x["status"] = "wrong"
         r[op] = x
@@ -338,7 +342,9 @@ def run_chain_case(c):
                     continue
                 n += 1
                 got = inside(shape, g)
-                if got is not None and got != truth(g):
+                if got is None:
+                    r["undecided"] = r.get("undecided", 0) + 1
+                elif got != truth(g):
                     miss += 1
             if miss:
                 r.update(status="wrong", fail_step=step, fail_tool=kind, fail_snap=snap, miss=miss, n_pts=n)
@@ -346,7 +352,11 @@ def run_chain_case(c):
         r["steps_ok"] = step
     r["ms"] = round(sum(r["ms"]), 1)
     if r["status"] == "ok":      # finish as a designer would: round one edge
-        edges = sharp_edges(shape)
+        try:
+            edges = sharp_edges(shape)
+        except Exception as e:   # the kernel could not list the edges of its own result
+            reraise_unless_kernel(e)
+            edges, r["fillet"] = [], "error"
         if edges:
             e = rng.choice(edges)
             r["fillet"] = fillet(shape, [e], 0.05 * min(x[1] for x in edges))
@@ -368,7 +378,11 @@ def run_fillet_case(c):
         x = boolean(op, A, B, 0.0)
         if x["status"] == "ok" and x["vol"] > 1.0 and abs(x["vol"] - va) > 1e-6 * va:
             base, how = x["shape"], op
-    edges = sharp_edges(base)
+    try:
+        edges = sharp_edges(base)
+    except Exception as e:       # the kernel could not list the edges of its own solid
+        reraise_unless_kernel(e)
+        return {"base": how, "mode": c["mode"], "status": "error", "exc": "sharp_edges: " + str(e)[:100]}
     r = {"base": how, "n_sharp": len(edges), "mode": c["mode"]}
     if not edges:
         r["status"] = "skipped"

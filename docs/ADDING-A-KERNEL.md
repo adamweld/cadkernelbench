@@ -30,7 +30,7 @@ Pass `fuzzy0=True` unless the kernel's booleans accept a tolerance argument.
 
 ## Before recording any result
 
-1. **Validate `inside`.** For a few hundred random primitives, classify sample points with the kernel and compare with the closed-form `margin` of each primitive. Skip points with `abs(margin) < m.BAND`. There must be no disagreement. Report the count with your results.
+1. **Validate `inside`.** For a few hundred random primitives, classify sample points with the kernel and compare with the closed-form `margin` of each primitive. Skip points with `abs(margin) < m.BAND`. There must be no disagreement. Report the count with your results. `python -m ckb.validate ckb.kernels.yourkernel --bbox boxes.json` does this, and writes the bounding boxes for step 2.
 2. **Check placement** on one box: its bounding box must match another kernel's for the same case.
 3. **Make `reraise_unless_kernel` strict.** If a bug in your adapter is counted as a kernel error, the failure rates are meaningless.
 4. **Watch memory.** If the kernel or its binding leaks, pass `recycle=N` to `driver.main` so workers restart every N cases.

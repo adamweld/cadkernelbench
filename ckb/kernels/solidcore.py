@@ -1,21 +1,30 @@
 # SPDX-License-Identifier: MIT OR Apache-2.0
 """Adapter for solidcore.
 
-NOT YET RUN. The server it drives (solidcore_server/) could not be
-compiled in the session that wrote this, for lack of memory, so this
-adapter is untested. Expect to fix small things on first use.
-
 solidcore is driven through solidcore_server, a small program over its
 solidcore-ops crate. Set SOLIDCORE_SERVER to the built binary.
 
-What is covered: booleans (near-degenerate, generic) and feature
-sequences, checked with solidcore's own point classification and its
-validity check. Fillets are not wired up: solidcore's blend call takes a
-richer description than one radius per edge, and that mapping has not
-been written. The final fillet of each feature sequence is skipped.
-
     SOLIDCORE_SERVER=/path/to/solidcore-server \\
         python -m ckb.kernels.solidcore --out solidcore.jsonl --jobs 4
+
+Points are classified by winding number about solidcore's own
+tessellation of the result (solidcore-tess), as for SMLib, because
+solidcore's point classification (Body::classify_point) failed the
+inside-test validation; see docs/RESULTS.md. A result is valid when solidcore's own check
+(Body::check at CheckLevel::Geometry) passes and the body is a closed
+manifold solid (Body::is_manifold_solid); each verdict is recorded
+separately. Fillets are solidcore-ops' blend(): a constant-radius
+rolling-ball round, corners filled, on the chosen edges.
+
+One difference from the OCCT adapter: ops gives the faces' normals at
+the middle of an edge only, so an edge is judged sharp, and its face
+angle recorded, at its midpoint, not at three points along it.
+
+Errors are kept in three kinds. solidcore refusing a call is a kernel
+error (KernelError). The server rejecting a request is a bug in this
+benchmark (HarnessError) and stops the run. The server process dying is
+a crash: the worker dies with it, with the same exit status, so the
+driver records the case as lost (and retries it once after signal 9).
 """
 import json
 import os
@@ -30,90 +39,175 @@ class KernelError(RuntimeError):
     pass
 
 
+class HarnessError(Exception):
+    pass
+
+
 class Server:
     def __init__(self):
         self.p = None
+        self.to_free = []
 
-    def call(self, **req):
-        if self.p is None or self.p.poll() is not None:
-            self.p = subprocess.Popen([os.environ["SOLIDCORE_SERVER"]], stdin=subprocess.PIPE,
-                                      stdout=subprocess.PIPE, text=True, bufsize=1)
+    def _start(self):
+        log = os.environ.get("SOLIDCORE_LOG")
+        err = open(log, "a") if log else subprocess.DEVNULL
+        self.p = subprocess.Popen([os.environ["SOLIDCORE_SERVER"]], stdin=subprocess.PIPE,
+                                  stdout=subprocess.PIPE, stderr=err, text=True, bufsize=1)
+
+    def _send(self, req):
+        if self.p is None:
+            self._start()
         try:
             self.p.stdin.write(json.dumps(req) + "\n")
             self.p.stdin.flush()
             line = self.p.stdout.readline()
         except (BrokenPipeError, OSError):
             line = ""
-        if not line:                      # the server died: that is a kernel crash
-            rc = self.p.poll()
-            self.p = None
-            raise KernelError(f"server exited rc={rc}")
+        if not line:
+            self._died()
         return json.loads(line)
+
+    def _died(self):
+        """The server died inside a kernel call: the case crashed. Every body it held is gone,
+        so this worker cannot go on; it dies with the server's status."""
+        rc = self.p.wait()
+        if rc < 0:
+            os.kill(os.getpid(), -rc)
+            time.sleep(5)
+        os._exit(rc if rc not in (0, 3, 4) else 70 + rc)
+
+    def call(self, **req):
+        if self.to_free:
+            hs, self.to_free = self.to_free, []
+            self._reply(self._send({"op": "free", "hs": hs}))
+        return self._reply(self._send(req))
+
+    @staticmethod
+    def _reply(r):
+        if "ok" in r:
+            return r["ok"]
+        if "kerr" in r:
+            raise KernelError(r["kerr"])
+        raise HarnessError(r.get("herr", r))
 
 
 S = Server()
 
 
 class Body:
-    """A handle to a body held by the server."""
+    """A handle to a body held by the server, freed there when dropped here."""
 
     def __init__(self, h):
         self.h = h
 
+    def __del__(self):
+        S.to_free.append(self.h)
+
+
+class _Empty:
+    """The result of a boolean that solidcore reports as empty: no material anywhere."""
+
+
+EMPTY = _Empty()
+
 
 def build(kind, fr, p, *dims):
-    # Rows 0-2 are the images of x, y, z; row 3 is the translation; p' = p.A + t.
+    # Body::transform: rows 0-2 are the images of x, y and z, row 3 the translation,
+    # p' = p.A + t. The image of local axis i is column i of fr.R.
     mat = [[fr.R[0][i], fr.R[1][i], fr.R[2][i], 0.0] for i in range(3)] + [[fr.o[0], fr.o[1], fr.o[2], 1.0]]
     r = S.call(op="make", kind=kind, p=[float(x) for x in p], dims=[float(d) for d in dims], m=mat)
-    if "h" not in r:
-        raise KernelError(r.get("err", "make failed"))
     return Body(r["h"])
 
 
 def volume(shape):
-    if shape is None:
+    if shape is EMPTY:
         return 0.0
     r = S.call(op="vol", h=shape.h)
     if "vol" not in r:
-        raise KernelError(r.get("err"))
+        raise KernelError(r["vol_err"])
     return r["vol"]
 
 
+def _verdict(v):
+    """The validity verdict from the server's two checks, and why it failed."""
+    why = []
+    if v["solid"] is False:
+        why.append("not a manifold solid")
+    if v["check"] is False:
+        why.append("check failed " + ",".join(map(str, v["check_tests"])))
+    if v["solid"] is None:
+        why.append("manifold test did not run: " + v["solid_err"])
+    if v["check"] is None:
+        why.append("check did not run: " + v["check_err"])
+    return v["solid"] is True and v["check"] is True, why
+
+
 def valid(shape):
-    return shape is None or bool(S.call(op="valid", h=shape.h).get("valid"))
+    if shape is EMPTY:
+        return True
+    return _verdict(S.call(op="valid", h=shape.h))[0]
 
 
 def bbox(shape):
     r = S.call(op="bbox", h=shape.h)
-    if "lo" not in r:
-        raise KernelError(r.get("err"))
     return (*r["lo"], *r["hi"])
 
 
 def has_solid(shape):
-    return shape is not None
+    return shape is not EMPTY
+
+
+MESH_LOG = os.environ.get("SOLIDCORE_MESHLOG")
+_logged = set()
 
 
 def inside(shape, g):
-    c = S.call(op="classify", h=shape.h, pts=[list(g)]).get("cls", [-2])[0]
+    """Generalised winding number of g about solidcore's own tessellation of the shape (chord
+    3e-3 mm, inside the 1e-2 mm band of unused points), with the SMLib run's thresholds: near 1
+    inside, near 0 outside, otherwise None. solidcore's classify_point is not used: it failed
+    the inside-test validation (see docs/RESULTS.md). A body whose mesh left a face out answers
+    None for every point, which core counts as undecided."""
+    if shape is EMPTY:
+        return False
+    r = S.call(op="wn", h=shape.h, pts=[list(g)])
+    d = r["defects"]
+    if MESH_LOG and shape.h not in _logged and any(v for k, v in d.items() if k != "triangles"):
+        _logged.add(shape.h)
+        with open(MESH_LOG, "a") as f:
+            f.write(json.dumps({"pid": os.getpid(), "h": shape.h, **d}) + "\n")
+    if d["unmeshed"] or d["refused_at_evaluate"]:
+        return None
+    w = abs(r["w"][0])
+    return True if abs(w - 1) < 0.1 else False if w < 0.1 else None
+
+
+def classify_point(shape, g):
+    """solidcore's own point classification, kept for the validation that rejected it."""
+    c = S.call(op="classify", h=shape.h, pts=[list(g)])["cls"][0]
     return True if c == 1 else False if c == 0 else None
 
 
 def boolean(op, A, B, fuzzy):
+    """The boolean, its volume and validity check, timed together as for OCCT."""
     t = time.perf_counter()
     out = {"status": "ok"}
     try:
         r = S.call(op="bool", kind=op, a=A.h, b=B.h)
-        if r.get("status") == "empty":
-            out["shape"], out["vol"] = None, 0.0
-        elif r.get("status") == "ok":
-            out["shape"], out["vol"] = Body(r["h"]), r["vol"]
-            if not valid(out["shape"]):
-                out["status"] = "invalid"
+        if r.get("empty"):
+            out["shape"], out["vol"] = EMPTY, 0.0
         else:
-            out["status"], out["exc"] = "error", str(r.get("err"))[:120]
+            out["shape"] = Body(r["h"])
+            if "vol" in r:
+                out["vol"] = r["vol"]
+            else:                        # recorded; volumes are never used to judge
+                out["vol"], out["vol_err"] = float("nan"), r["vol_err"][:120]
+            ok, why = _verdict(r["valid"])
+            if why:
+                out["why"] = why
+            if not ok:
+                out["status"] = "invalid"
     except KernelError as e:
-        out["status"], out["exc"] = "error", str(e)[:120]
+        out["status"], out["exc"] = "error", str(e)[:200]
     out["ms"] = round((time.perf_counter() - t) * 1e3, 2)
     return out
 
@@ -124,14 +218,27 @@ def reraise_unless_kernel(e):
 
 
 def sharp_edges(shape):
-    return []          # fillets are not wired up; see the module docstring
+    """Edges between two different faces whose normals differ by 5 degrees or more at the
+    edge's middle. Elements are (edge, length, angle, angle); edge is (body, record index)."""
+    if shape is EMPTY:
+        return []
+    r = S.call(op="edges", h=shape.h)
+    return [((shape, e["i"]), e["len"], e["ang"], e["ang"]) for e in r["edges"]
+            if e["ang"] >= 5.0 and e["len"] > 1e-6]
 
 
 def fillet(shape, edges, radius):
-    return "skipped"
+    hs = {e[0][0].h for e in edges}
+    if hs != {shape.h}:
+        raise HarnessError("edges from another body")
+    try:
+        v = S.call(op="fillet", h=shape.h, edges=[e[0][1] for e in edges], r=float(radius))
+    except KernelError:
+        return "error"
+    return "ok" if _verdict(v)[0] else "invalid"
 
 
 m.install(globals())
 
 if __name__ == "__main__":
-    driver.main(m, "ckb.kernels.solidcore", default_kinds="near,generic,chain", fuzzy0=True)
+    driver.main(m, "ckb.kernels.solidcore", fuzzy0=True)

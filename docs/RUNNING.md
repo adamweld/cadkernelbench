@@ -1,6 +1,6 @@
 # Running the benchmarks, and what is left to run
 
-Written 2026-11-10. The first measurements were made on a 16 GB machine, which was not enough for the items below.
+Written 2026-11-10 and updated 2026-11-11, when task 1 was done. The first measurements were made on a 16 GB machine, which was not enough for solidcore's build; it built on a 32 GB machine.
 
 ## What is already done
 
@@ -12,12 +12,14 @@ Results are in [RESULTS.md](RESULTS.md) and the method in [METHOD.md](METHOD.md)
 | SMLib (USD BRep 1.0.1): booleans and feature sequences, paired with OCCT on identical cases | Done, 2,682 cases |
 | OCCT on the public surface-intersection corpus | Done, 119 cases, two modes |
 | quiddity 0.4.9: feature recognition on generated parts | Done, 60 parts |
+| solidcore (SolidCraft `75a74aee`): booleans, fillets and feature sequences, with OCCT re-run on the identical cases | Done, 6,000 cases each |
 
 ## What is left, in priority order
 
 | # | Task | Why it matters | Rough time |
 |---|---|---|---|
-| 1 | Build and measure solidcore | It is designed for determinism and certified geometry, and has no measurement here | Build 20 to 60 min; run under 1 hour |
+| 1 | ~~Build and measure solidcore~~ | Done 2026-11-11; see [RESULTS.md](RESULTS.md) | Build took 4 min and 5.1 GB peak on an M1 Max; run 12 min on 8 cores |
+| 1a | Report solidcore's moved-torus and point-classification defects upstream, then re-run its generic pairs and fillets with tori | A torus placed by `Body::transform` fails solidcore's own check, so those cases are reported separately, not measured | Re-run under 15 minutes once fixed |
 | 2 | SMLib fillets | Completes the SMLib comparison | 1 to 2 hours |
 | 3 | Re-run SMLib and solidcore's intersector on the surface-intersection corpus | Their published scores (81 and 118 of 119) have not been reproduced | 1 to 2 hours, needs a C++ build of SMLib |
 | 4 | Build SolidCraft's headless CLI and run feature sequences through it | Measures the application, not only the kernel | Half a day |
@@ -30,7 +32,7 @@ Stop after any of them. Each is independent.
 - Linux x86_64 or Windows for SMLib's Python package (CPython 3.12 only). OCCT's package also works on macOS.
 - [uv](https://docs.astral.sh/uv/) for Python environments.
 - A Rust toolchain, 1.88 or newer, for solidcore.
-- **Memory: 32 GB recommended.** Compiling solidcore's kernel crate was killed twice on a 16 GB machine. SMLib's Python package grows by about 100 MB per case; the scripts restart workers to contain it, at about 1.5 GB per worker.
+- **Memory: 32 GB recommended.** Compiling solidcore's kernel crate was killed twice on a 16 GB Linux machine; on a 32 GB M1 Max its largest compiler process peaked at 5.1 GB. SMLib's Python package grows by about 100 MB per case; the scripts restart workers to contain it, at about 1.5 GB per worker.
 - About 5 GB of disk.
 
 ## Setup
@@ -63,40 +65,53 @@ It should finish in about a minute with 300 lines, all with `"status": "ok"`, ma
 
 ## Task 1: solidcore
 
-solidcore is vendored inside SolidCraft's repository. The commit measured against so far is `75a74aee`.
+Done on 2026-11-11; results in [RESULTS.md](RESULTS.md). To repeat it:
+
+solidcore is vendored inside SolidCraft's repository. The commit measured is `75a74aee`.
 
 ```bash
-git clone --depth 1 https://github.com/tangency-labs/solidcraft ~/solidcraft
+git clone https://github.com/tangency-labs/solidcraft ~/solidcraft && git -C ~/solidcraft checkout 75a74aee
 ```
 
-Point the server's manifest at that checkout and build it. `-j 1` keeps memory down; drop it if you have plenty.
+Point the server's manifest at that checkout and build it with the toolchain solidcore pins (1.98.0). `-i.bak` works with both GNU and BSD sed.
 
 ```bash
-sed -i "s#SOLIDCORE#$HOME/solidcraft/solidcore#" solidcore_server/Cargo.toml
+sed -i.bak "s#SOLIDCORE#$HOME/solidcraft/solidcore#" solidcore_server/Cargo.toml
 ```
 
 ```bash
-cargo build --release -j 1 --manifest-path solidcore_server/Cargo.toml
+cargo +1.98.0 build --release --manifest-path solidcore_server/Cargo.toml
 ```
 
-Then run the booleans and feature sequences:
+With Homebrew's rustup, `cargo +1.98.0` may not find `rustc`; put `~/.rustup/toolchains/1.98.0-<host>/bin` first on `PATH` instead. On a 16 GB machine add `-j 1`.
+
+Validate first. The inside test must show no disagreement:
 
 ```bash
-SOLIDCORE_SERVER=$PWD/solidcore_server/target/release/solidcore-server .venv-occt/bin/python -m ckb.kernels.solidcore --out solidcore.jsonl --jobs 4
+SOLIDCORE_SERVER=$PWD/solidcore_server/target/release/solidcore-server .venv-occt/bin/python -m ckb.validate ckb.kernels.solidcore
 ```
 
-**This path has never been run.** `solidcore_server/src/main.rs` and `ckb/kernels/solidcore.py` were written against solidcore's source but could not be compiled in the session. Expect small fixes on first use. Things to check before trusting any number:
-
-1. **The transform convention.** The adapter sends a 4x4 matrix with the rotated x, y and z axes in rows 0 to 2 and the translation in row 3, following the comment on `Body::transform`. Verify with one box: its bounding box after placement must match OCCT's for the same case.
-2. **Validate the inside test first**, as was done for the other kernels. For a few hundred random primitives, classify sample points with solidcore and compare with the closed-form `margin` in `ckb/core.py`. There must be no disagreement before any boolean result is recorded. The pattern is in [ADDING-A-KERNEL.md](ADDING-A-KERNEL.md): build `m.random_prim`, take `m.sample_points`, skip points with `abs(margin) < m.BAND`, compare `m.inside` with `margin > 0`.
-3. **Primitive conventions.** The server assumes `make_cylinder` and `make_cone` take a base centre and extend along +z, and `make_torus` lies in the xy plane. Step 2 will catch any mismatch.
-4. **Fillets are not wired up.** solidcore's blend call takes more than a radius per edge. The final fillet of each sequence is skipped and reported as absent.
-
-To compare, OCCT's results on the identical cases are already in `results/2026-11-10/occt_paired_booleans.jsonl.gz` and `occt_paired_sequences.jsonl.gz`. The generic set there covers the first 282 pairs only; to pair the full 600, re-run:
+At commit `75a74aee` this reports 0 disagreements on boxes, cylinders, spheres and cones, and 88 tori it will not classify against (its moved-torus defect), so it exits with status 1. Then run everything:
 
 ```bash
-.venv-occt/bin/python -m ckb.kernels.occt --fuzzy0 --out occt_paired_full.jsonl --jobs 4 --kinds near,generic,chain
+SOLIDCORE_SERVER=$PWD/solidcore_server/target/release/solidcore-server SOLIDCORE_MESHLOG=mesh_defects.jsonl .venv-occt/bin/python -m ckb.kernels.solidcore --out solidcore.jsonl --jobs 8
 ```
+
+and OCCT on the same cases:
+
+```bash
+.venv-occt/bin/python -m ckb.kernels.occt --fuzzy0 --out occt_paired.jsonl --jobs 8 --kinds near,generic,fillet,chain
+```
+
+Compare them with `python -m ckb.paired OCCT=occt_paired.jsonl solidcore=solidcore.jsonl`.
+
+What the first run found in the adapter, and how it is handled now:
+
+1. **Point classification** is by winding number about solidcore's own tessellation, because `Body::classify_point` failed the inside-test validation. `python -m ckb.validate ckb.kernels.solidcore --inside classify_point` shows the failure.
+2. **Errors are kept in three kinds.** A kernel refusal counts against the kernel. The server rejecting a request (a bad handle, for example) is a benchmark bug and stops the run. The server dying is a crash: the worker dies with the same status, so the case is recorded as lost and is retried after signal 9.
+3. **An empty result is a solid with nothing in it**, not a missing shape, so its point test still runs.
+4. **Fillets** use solidcore-ops' `blend` with a constant radius. Sharp edges are judged at the middle of each edge, the only place ops gives face normals.
+5. The transform convention in `build` was right: the bounding boxes of boxes, cylinders and cones agree with OCCT's to 1e-7.
 
 ## Task 2: SMLib fillets
 
