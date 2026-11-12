@@ -255,8 +255,11 @@ Run on 2026-11-12 on the same Apple M1 Max as the solidcore run (32 GB, macOS 26
 - **Sharp edges** are judged as for OCCT, by the face normals at 10%, 50% and 90% along each edge. `Kernel::fillet` carries a round on along tangent edges, as OCCT's does.
 - **Fillets changed the body.** Every sequence's final fillet and 300 fillet cases recorded as successful were replayed, and in all 600 the volume changed and faces were added.
   - On single edges where the faces meet at 90 degrees, the median volume removed was 1.000000 times the closed form, (1 − π/4)·r²·L.
-  - A few differ by much more, up to 4,248 times on a radius of 0.002 mm. Near the edge the change matched the closed form, and the rest lay elsewhere in the body. Whether that is volume-integration precision or something else was not established.
-  - The benchmark does not judge fillet geometry for any kernel.
+  - A few differ by much more, up to 4,248 times on a radius of 0.002 mm. Those 31 cases, with 5 typical ones as controls, were written to STEP before and after the fillet and measured with OCCT ([../results/2026-11-12/fillet_check/](../results/2026-11-12/fillet_check/)):
+    - **29 agree.** OCCT's adaptive volume integration (error bound 1e-9) gives the same volume change to about 1e-5 mm³. Where OCCT could subtract one body from the other, the whole change touched the filleted edge. Ratios above 1 there come from the round continuing along tangent edges, and from edges that are not straight lines between planes.
+    - **In 4, cadrs's own volume of the filleted body is off** by 0.045 to 0.125 mm³ in bodies of 380,000 to 643,000 mm³, at most about 3e-7 of the volume. OCCT finds a much smaller change, and in 3 of them its subtraction found that change at the edge alone. Volumes are not used to judge any result here. OCCT's default volume integration is off by up to 0.6%.
+    - **3 are unresolved** (cases 5905, 5925 and 5995). After STEP export, OCCT reads cadrs's filleted body as 65, 2,081 and 216 mm³ larger than cadrs's own volume, and calls two of the three invalid. cadrs's own check passes, and its own mesh agrees with its own volume both before and after the fillet. So the fault is either in the STEP export or in a body cadrs's own tools cannot see wrong. The STEP files are in the folder above.
+  - The benchmark does not judge fillet geometry for any kernel, so none of this changes a count above.
 - **Every failure was replayed**: all 436 cases with a failure, three times, with the same outcome each time. The one hung case was replayed twice.
 - **Timing** covers the boolean, its volume and both validity verdicts, as for the other kernels. On sequence steps the median operation took 3.3 ms, of which the validity check was 1.5 ms and the volume 0.17 ms.
 

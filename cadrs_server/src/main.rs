@@ -412,6 +412,31 @@ impl Server {
                 Ok(json!({"vol_before": before.0, "faces_before": before.1, "vol_after": va,
                           "faces_after": fa, "h": self.store(f), "edge_points": ends}))
             }
+            "fillet_export" => {
+                // For checking a fillet's geometry with another kernel: writes the body before and
+                // after Kernel::fillet as STEP files. Not used by the benchmark's runs.
+                let id = self.id(req, "h")?;
+                let edges: Vec<EdgeId> = req["edges"]
+                    .as_array()
+                    .ok_or_else(|| herr("missing edges"))?
+                    .iter()
+                    .map(|e| e.as_u64().map(EdgeId).ok_or_else(|| herr("bad edge")))
+                    .collect::<Result<_, _>>()?;
+                let r = num(&req["r"])?;
+                let (Some(pb), Some(pa)) = (req["before"].as_str(), req["after"].as_str()) else {
+                    return Err(herr("missing paths"));
+                };
+                let res = self.k.fillet(id, &edges, r).map_err(|e| kerr(&e))?;
+                let f = self.one(&res.bodies)?;
+                let before = self.k.export_step(&[id]).map_err(|e| kerr(&e))?;
+                let after = self.k.export_step(&[f]).map_err(|e| kerr(&e));
+                let vols = (self.k.mass_properties(id).map(|m| m.volume), self.k.mass_properties(f).map(|m| m.volume));
+                self.k.release(f);
+                let after = after?;
+                std::fs::write(pb, before).map_err(|e| herr(&e.to_string()))?;
+                std::fs::write(pa, after).map_err(|e| herr(&e.to_string()))?;
+                Ok(json!({"vol_before": vols.0.map_err(|e| kerr(&e))?, "vol_after": vols.1.map_err(|e| kerr(&e))?}))
+            }
             "free" => {
                 for h in req["hs"].as_array().ok_or_else(|| herr("missing hs"))? {
                     if let Some(x) = self.held.remove(&h.as_u64().unwrap_or(0)) {
