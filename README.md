@@ -30,7 +30,8 @@ The two are meant to be read together.
 | Fillets on sharp edges | Working, with a known limit: fillet existence is not proved | One edge or all edges, three radii |
 | Surface intersection | An OCCT runner for the external [SSI corpus](https://github.com/jyviko/ssi-corpus) | 119, theirs |
 | Feature recognition | A generator of STEP parts with known features | 60 |
-| Feature sequences at depth, blends with proved existence, freeform booleans, reference survival, throughput and determinism | Planned | |
+| [Reference survival](docs/REFERENCE-SURVIVAL.md): after an upstream edit, does a stored reference to a face still find it? | Working for faces, on two OCCT-based naming schemes. No existing CAD product measured yet | 9 kinds of edit x models of 10, 50 and 200 features, 8 references each |
+| Feature sequences at depth, blends with proved existence, freeform booleans, throughput and determinism | Planned | |
 
 Kernel adapters: Open CASCADE (run), SMLib through NVIDIA's `usd-brep` (run), solidcore (written, **never run**).
 

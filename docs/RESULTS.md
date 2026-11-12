@@ -163,3 +163,7 @@ Reading:
 - On clean, well-separated features, recognition is exact, including diameters and whether a hole is through or blind. That is the recognition half of recovering a parametric model from a STEP file, working today under Apache-2.0.
 - This is an easy test. Features do not interact, there are no freeform faces, and no feature is cut by another. Real parts are harder, and this says nothing about them.
 - quiddity reports features. It does not build an editable feature tree or decide the order of operations, which is the part of reconstruction still to be written.
+
+## Reference survival
+
+Method and outcome names are in [REFERENCE-SURVIVAL.md](REFERENCE-SURVIVAL.md). The first full run of the two OCCT-based systems is in progress; no figures are published yet.
