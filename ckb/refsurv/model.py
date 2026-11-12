@@ -104,6 +104,22 @@ class Model:
                     hits.append((s["uid"], name))
         return hits
 
+    def coincident(self, identity):
+        """Whether another primitive has a surface in the same plane, on the
+        same cylinder or on the same sphere as this one. A face there would
+        belong to both, so it has no single identity."""
+        if all(s["uid"] != identity[0] for s in self.steps):
+            return False
+        mine = _carrier(self.step(identity[0]), identity[1])
+        for s in self.steps:
+            for name in SURFACES[s["kind"]]:
+                if (s["uid"], name) == tuple(identity):
+                    continue
+                c = _carrier(s, name)
+                if c[0] == mine[0] and np.allclose(c[1], mine[1], rtol=0, atol=1e-6):
+                    return True
+        return False
+
     def pieces(self, identity, step=STEP_COARSE):
         """The pieces of one primitive surface that bound the solid.
         Returns a Pieces, whose count is the number of separate faces the
@@ -177,6 +193,20 @@ class Pieces:
 
 
 SURFACES = {"box": ["x0", "x1", "y0", "y1", "z0", "z1"], "cyl": ["side", "lo", "hi"], "sph": ["s"]}
+
+
+def _carrier(s, name):
+    """The unbounded surface a primitive's surface lies on, as a kind and numbers."""
+    p = s["p"]
+    if s["kind"] == "box":
+        i = "xyz".index(name[0])
+        return ("plane", i), [p[i] + (s["d"][i] if name[1] == "1" else 0.0)]
+    if s["kind"] == "sph":
+        return ("sphere",), [*p, s["r"]]
+    a = s["ax"]
+    if name == "side":
+        return ("cylinder", a), [*[p[i] for i in range(3) if i != a], s["r"]]
+    return ("plane", a), [p[a] + (s["h"] if name == "hi" else 0.0)]
 
 
 def margin(s, Q):

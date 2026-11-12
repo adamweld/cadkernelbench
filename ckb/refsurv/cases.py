@@ -52,26 +52,30 @@ def feature(rng, uid, S, Lz, kind=None):
     kind = kind or rng.choice(["hole", "blind", "sidehole", "boss", "pocket", "pad", "slot", "ball"])
     x, y = rng.uniform(0.08, 0.92) * S, rng.uniform(0.08, 0.92) * S
     s = {"uid": uid, "feature": kind}
+    # How far a feature overshoots the block, or is sunk into it, is drawn
+    # afresh each time. A fixed amount would put the ends of many features
+    # in one plane, and a face there would have several identities.
+    over, sink = rng.uniform(3, 7), rng.uniform(1, 3)
     if kind == "hole":
-        s.update(op="cut", kind="cyl", ax=2, p=[x, y, -5.0], r=rng.uniform(3, 8), h=Lz + 10.0)
+        s.update(op="cut", kind="cyl", ax=2, p=[x, y, -over], r=rng.uniform(3, 8), h=Lz + over + rng.uniform(3, 7))
     elif kind == "blind":
         depth = rng.uniform(5, 20)
-        s.update(op="cut", kind="cyl", ax=2, p=[x, y, Lz - depth], r=rng.uniform(3, 8), h=depth + 5.0)
+        s.update(op="cut", kind="cyl", ax=2, p=[x, y, Lz - depth], r=rng.uniform(3, 8), h=depth + over)
     elif kind == "sidehole":
         ax = rng.choice([0, 1])
         p = [x, y, rng.uniform(10, Lz - 10)]
-        p[ax] = -5.0
-        s.update(op="cut", kind="cyl", ax=ax, p=p, r=rng.uniform(3, 6), h=S + 10.0)
+        p[ax] = -over
+        s.update(op="cut", kind="cyl", ax=ax, p=p, r=rng.uniform(3, 6), h=S + over + rng.uniform(3, 7))
     elif kind == "boss":
-        s.update(op="fuse", kind="cyl", ax=2, p=[x, y, Lz - 2.0], r=rng.uniform(5, 12), h=rng.uniform(8, 22))
+        s.update(op="fuse", kind="cyl", ax=2, p=[x, y, Lz - sink], r=rng.uniform(5, 12), h=rng.uniform(8, 22))
     elif kind == "pocket":
         depth = rng.uniform(5, 20)
-        s.update(op="cut", kind="box", p=[x, y, Lz - depth], d=[rng.uniform(8, 25), rng.uniform(8, 25), depth + 5.0])
+        s.update(op="cut", kind="box", p=[x, y, Lz - depth], d=[rng.uniform(8, 25), rng.uniform(8, 25), depth + over])
     elif kind == "pad":
-        s.update(op="fuse", kind="box", p=[x, y, Lz - 2.0], d=[rng.uniform(8, 25), rng.uniform(8, 25), rng.uniform(8, 22)])
+        s.update(op="fuse", kind="box", p=[x, y, Lz - sink], d=[rng.uniform(8, 25), rng.uniform(8, 25), rng.uniform(8, 22)])
     elif kind == "slot":
         depth = rng.uniform(5, 15)
-        s.update(op="cut", kind="box", p=[x * 0.5, y, Lz - depth], d=[rng.uniform(30, 80), rng.uniform(4, 8), depth + 5.0])
+        s.update(op="cut", kind="box", p=[x * 0.5, y, Lz - depth], d=[rng.uniform(30, 80), rng.uniform(4, 8), depth + over])
     else:
         s.update(op="cut", kind="sph", p=[x, y, Lz], r=rng.uniform(5, 12))
     return s
@@ -177,6 +181,9 @@ def references(c, before, after, focus):
             break
         b = before.pieces(identity)
         if b.count == 0:
+            continue
+        if before.coincident(identity) or after.coincident(identity):
+            skipped += 1                    # a face here would have two identities
             continue
         b = M.well_posed(before, identity)
         a = M.well_posed(after, identity)

@@ -29,6 +29,7 @@ That count can depend on the grid where pieces are joined by a neck, or separate
 
 - The count is taken at two spacings, 0.5 and 0.3. If they differ the reference is passed over.
 - A piece of fewer than 12 fine cells is treated as a sliver and the reference is passed over.
+- A surface that shares its plane, cylinder or sphere with another primitive's is passed over, because a face there has no single identity.
 
 The number passed over is reported with every result.
 
@@ -130,7 +131,7 @@ The environment is the OCCT one from [RUNNING.md](RUNNING.md), which already has
 ## What this does not measure
 
 - **Edges and vertices.** Only faces are referenced. An edge has the identity of the two surfaces it separates and can be added the same way.
-- **Coincident faces.** Features are placed at random, so no two primitive surfaces coincide. A boss standing exactly on a face, which real models are full of, gives a face two possible identities and needs a rule this version does not have.
+- **Coincident faces.** A boss standing exactly on a face, which real models are full of, gives the face there two possible identities and needs a rule this version does not have. Features are placed and sized at random so that it does not arise, and any surface that shares a plane, cylinder or sphere with another is passed over.
 - **Fillets, sketches and freeform surfaces.** A fillet face could take the identity of the edge it replaced, and an extruded face that of its sketch curve. Lofts and sweeps have no closed-form origin.
 - **Patterns.** Changing the count of a pattern is not among the edits.
 - **Real engineering models.** Generated models are not designed. The suite can show that a scheme fails on generated models of realistic depth. It cannot show that a scheme works on real ones.
