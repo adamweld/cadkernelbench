@@ -31,6 +31,7 @@ The two are meant to be read together.
 | Surface intersection | An OCCT runner for the external [SSI corpus](https://github.com/jyviko/ssi-corpus) | 119, theirs |
 | Feature recognition | A generator of STEP parts with known features | 60 |
 | [Reference survival](docs/REFERENCE-SURVIVAL.md): after an upstream edit, does a stored reference to a face still find it? | Working for faces, on two OCCT-based naming schemes. No existing CAD product measured yet | 9 kinds of edit x models of 10, 50 and 200 features, 8 references each |
+| [Private rounds](docs/ROUNDS.md): the same families drawn from a secret key that is committed to beforehand and revealed with the results | Mechanism working; no round published yet | |
 | Feature sequences at depth, blends with proved existence, freeform booleans, throughput and determinism | Planned | |
 
 Kernel adapters: Open CASCADE (run), SMLib through NVIDIA's `usd-brep` (run), solidcore (written, **never run**).
@@ -81,6 +82,7 @@ Add `--fuzzy0` to run only the cases every kernel can run, for a case-by-case co
 6. **Results are reported by family and difficulty, never as one number.**
 7. **Every published result names the kernel version, the machine and the commit**, and can be regenerated.
 8. **Results for every kernel are published**, favourable or not.
+9. **A private draw is committed to before it is run and revealed with its results**, so that it can be checked. See [docs/ROUNDS.md](docs/ROUNDS.md).
 
 ## Contributing
 

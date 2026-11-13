@@ -12,10 +12,13 @@ identities are recorded as residuals but never used to judge a result,
 because a kernel's own volume integration can be less accurate than its
 booleans.
 
-Every case is generated from a seed, so a run is reproducible.
+Every case is generated from a seed, so a run is reproducible. Which
+draw of the cases a run uses is its round: see ckb/rounds.py.
 """
 
 import argparse, json, math, os, random, subprocess, sys, time
+
+from . import rounds
 
 
 # ------------------------------------------------------ kernel interface
@@ -235,7 +238,7 @@ def sample_points(rng, A, B):
 
 
 def run_boolean_case(c):
-    rng = random.Random(1_000_003 * c["id"] + 17)
+    rng = rounds.rng("boolean", c["id"], 1_000_003 * c["id"] + 17)
     if c["kind"] == "near":
         A, B = near_pair(c["family"], c["eps"], rng)
     else:
@@ -283,7 +286,7 @@ def run_chain_case(c):
     about half of the tools placed flush with or tangent to existing
     faces. The true solid after every step is a known combination of
     analytic primitives, so the point test still applies."""
-    rng = random.Random(3_000_003 * c["id"] + 41)
+    rng = rounds.rng("chain", c["id"], 3_000_003 * c["id"] + 41)
     fr = Frame(rng)
     L = [rng.uniform(60, 120) for _ in range(3)]
     body = box(fr, (0, 0, 0), L)
@@ -368,7 +371,7 @@ def run_fillet_case(c):
     small fraction of the shortest sharp edge, so a fillet should nearly
     always exist geometrically; the reported rate is still an upper bound
     on kernel failure, because existence is not proved case by case."""
-    rng = random.Random(2_000_003 * c["id"] + 29)
+    rng = rounds.rng("fillet", c["id"], 2_000_003 * c["id"] + 29)
     A = random_prim(rng, 0).shape
     base, how = A, "primitive"
     if rng.random() < 0.75:

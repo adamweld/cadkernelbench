@@ -16,6 +16,7 @@ import random
 import sys
 
 from ckb import core as m
+from ckb import rounds
 
 m.FUZZY = [0.0]
 
@@ -46,10 +47,10 @@ def _kinds(draw):
 
 def has_torus(c):
     if c["kind"] == "generic":
-        rng = random.Random(1_000_003 * c["id"] + 17)
+        rng = rounds.rng("boolean", c["id"], 1_000_003 * c["id"] + 17)
         return "torus" in _kinds(lambda: (m.random_prim(rng, 0), m.random_prim(rng, 25)))
     if c["kind"] == "fillet":
-        rng = random.Random(2_000_003 * c["id"] + 29)
+        rng = rounds.rng("fillet", c["id"], 2_000_003 * c["id"] + 29)
 
         def draw():
             m.random_prim(rng, 0)
