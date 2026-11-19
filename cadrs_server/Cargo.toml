@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
+# A small server that lets the Python benchmark drive cadrs's kernel, cadrs_kernel
+# (https://github.com/rvdende/cadrs, MIT OR Apache-2.0).
+# Replace CADRS below with the path of a cadrs checkout, then build (docs/RUNNING.md).
+# Cargo.lock is cadrs's own, so dependencies match its builds.
+[package]
+name = "cadrs-server"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+cadrs_kernel = { path = "CADRS/crates/cadrs_kernel" }
+nalgebra = { version = "0.35", default-features = false, features = ["std"] }
+serde_json = "1"
+
+[profile.release]
+debug = false

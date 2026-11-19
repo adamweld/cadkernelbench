@@ -1,0 +1,9 @@
+540 solids, 67679 points compared, 0 undecided, 0 disagreements
+  points compared by kind: {'sph': 17508, 'cone': 10481, 'cyl': 14967, 'box': 24723}
+  placement, box: bounding box within 2.8e-14 mm of the exact box; smaller than it in 0 of 165
+  placement, cone: bounding box within 3.4e-14 mm of the exact box; smaller than it in 0 of 70
+  placement, cyl: bounding box within 5.7e-14 mm of the exact box; smaller than it in 0 of 100
+  placement, sph: bounding box within 1.2 mm of the exact box; smaller than it in 3 of 117
+  placement, torus: bounding box within 1.4 mm of the exact box; smaller than it in 77 of 88
+  88 torus solids the kernel would not classify against: Record("the body's tolerance is not finite and positive")
+exit status 1

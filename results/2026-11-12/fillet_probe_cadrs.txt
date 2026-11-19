@@ -1,0 +1,6 @@
+sequence final fillets: 300 replayed, 300 ok; volume changed and faces added in 300 of 300
+   single edges at 90 degrees: 281; |dV| / ((1-pi/4) r^2 L) median 1.000000, min 0.9794, max 4248.5122
+   unchanged examples: []
+fillet cases recorded ok: 300 replayed, 300 ok; volume changed and faces added in 300 of 300
+   single edges at 90 degrees: 71; |dV| / ((1-pi/4) r^2 L) median 1.000000, min 0.7895, max 6.2350
+   unchanged examples: []

@@ -1,0 +1,8 @@
+540 solids, 80862 points compared, 0 undecided, 0 disagreements
+  points compared by kind: {'torus': 13180, 'sph': 17511, 'cone': 10481, 'cyl': 14967, 'box': 24723}
+  placement, box: bounding box within 7.1e-14 mm of the exact box; smaller than it in 0 of 165
+  placement, cone: bounding box within 2.8e-14 mm of the exact box; smaller than it in 0 of 70
+  placement, cyl: bounding box within 5.7e-14 mm of the exact box; smaller than it in 0 of 100
+  placement, sph: bounding box within 6e-14 mm of the exact box; smaller than it in 0 of 117
+  placement, torus: bounding box within 3.2e-14 mm of the exact box; smaller than it in 0 of 88
+exit status 0

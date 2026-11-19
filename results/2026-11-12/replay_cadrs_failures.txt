@@ -1,0 +1,8 @@
+replayed 436 failing cases {'near': 147, 'generic': 1, 'fillet': 288}: same outcome 436, different 0
+fillet failure texts:
+    79 InvalidResult
+    79 OpenResult
+    47 BudgetExhausted
+    34 BooleanFailed
+    34 InvalidProfile
+    15 TooLarge

@@ -13,6 +13,7 @@ Results are in [RESULTS.md](RESULTS.md) and the method in [METHOD.md](METHOD.md)
 | OCCT on the public surface-intersection corpus | Done, 119 cases, two modes |
 | quiddity 0.4.9: feature recognition on generated parts | Done, 60 parts |
 | solidcore (SolidCraft `75a74aee`): booleans, fillets and feature sequences, with OCCT re-run on the identical cases | Done, 6,000 cases each |
+| cadrs's kernel (cadrs `6525e80a`): the same 6,000 cases, paired with that OCCT run | Done 2026-11-12; see [Measuring cadrs](#measuring-cadrs) |
 
 ## What is left, in priority order
 
@@ -20,6 +21,7 @@ Results are in [RESULTS.md](RESULTS.md) and the method in [METHOD.md](METHOD.md)
 |---|---|---|---|
 | 1 | ~~Build and measure solidcore~~ | Done 2026-11-11; see [RESULTS.md](RESULTS.md) | Build took 4 min and 5.1 GB peak on an M1 Max; run 12 min on 8 cores |
 | 1a | Report solidcore's moved-torus and point-classification defects upstream, then re-run its generic pairs and fillets with tori | A torus placed by `Body::transform` fails solidcore's own check, so those cases are reported separately, not measured | Re-run under 15 minutes once fixed |
+| 1b | Run brep-bench against cadrs | cadrs's release notes report building every brep-bench case; not reproduced here | Unknown |
 | 2 | SMLib fillets | Completes the SMLib comparison | 1 to 2 hours |
 | 3 | Re-run SMLib and solidcore's intersector on the surface-intersection corpus | Their published scores (81 and 118 of 119) have not been reproduced | 1 to 2 hours, needs a C++ build of SMLib |
 | 4 | Build SolidCraft's headless CLI and run feature sequences through it | Measures the application, not only the kernel | Half a day |
@@ -112,6 +114,65 @@ What the first run found in the adapter, and how it is handled now:
 3. **An empty result is a solid with nothing in it**, not a missing shape, so its point test still runs.
 4. **Fillets** use solidcore-ops' `blend` with a constant radius. Sharp edges are judged at the middle of each edge, the only place ops gives face normals.
 5. The transform convention in `build` was right: the bounding boxes of boxes, cylinders and cones agree with OCCT's to 1e-7.
+
+## Measuring cadrs
+
+Done on 2026-11-12; results in [RESULTS.md](RESULTS.md). To repeat it with cadrs at the commit measured:
+
+```bash
+git clone https://github.com/rvdende/cadrs ~/cadrs && git -C ~/cadrs checkout 6525e80a
+```
+
+Point the server's manifest at the checkout. `-i.bak` works with both GNU and BSD sed.
+
+```bash
+sed -i.bak "s#CADRS#$HOME/cadrs#" cadrs_server/Cargo.toml
+```
+
+Build it with the toolchain cadrs pins (`nightly-2026-10-21`). It took 2 minutes and 3.1 GB on an M1 Max.
+
+```bash
+rustup toolchain install nightly-2026-10-21 --profile minimal
+```
+
+```bash
+cargo +nightly-2026-10-21 build --release --manifest-path cadrs_server/Cargo.toml
+```
+
+With Homebrew's rustup, `cargo +nightly-2026-10-21` may not find `rustc`; put `~/.rustup/toolchains/nightly-2026-10-21-<host>/bin` first on `PATH` instead.
+
+Validate first. Both lines must report 0 disagreements and every bounding box within about 1e-13 mm of the exact one:
+
+```bash
+CADRS_SERVER=$PWD/cadrs_server/target/release/cadrs-server .venv-occt/bin/python -m ckb.validate ckb.kernels.cadrs
+```
+
+```bash
+CADRS_SERVER=$PWD/cadrs_server/target/release/cadrs-server .venv-occt/bin/python -m ckb.validate ckb.kernels.cadrs --inside winding_inside
+```
+
+Then run everything (4.5 minutes on 8 cores):
+
+```bash
+CADRS_SERVER=$PWD/cadrs_server/target/release/cadrs-server .venv-occt/bin/python -m ckb.kernels.cadrs --out cadrs.jsonl --jobs 8
+```
+
+Compare with the OCCT run made on the same machine:
+
+```bash
+.venv-occt/bin/python -m ckb.paired OCCT=occt_paired.jsonl cadrs=cadrs.jsonl
+```
+
+Use OCCT from `results/2026-11-11/` only if your machine and OCCT version match; otherwise re-run OCCT as under task 1. To replay every failure and to check that fillets change the body, use the two scripts in `results/2026-11-12/`.
+
+How the adapter handles cadrs:
+
+1. **Placement.** Every primitive is made in its local frame and placed by `Kernel::transform`.
+2. **Point classification** is cadrs's own `Kernel::classify`, which passed the inside test.
+3. **Empty results.** `EmptyResult` from a boolean is the answer "empty", judged by the point test, not an error.
+4. **Validity** is two verdicts. One is cadrs's `CheckLevel::Full` check. The other is a closed-manifold test the server computes from the topology, ignoring edge entries that no face uses.
+5. **Sharp edges** are judged at three points along each edge, as for OCCT.
+6. **Fillets** are `Kernel::fillet` with one radius.
 
 ## Task 2: SMLib fillets
 

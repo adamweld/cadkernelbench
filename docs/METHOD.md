@@ -4,7 +4,7 @@
 
 | Set | Size | What it is |
 |---|---|---|
-| Near-degenerate booleans | 2,100 pairs | Two primitives in a configuration that is degenerate when an offset is zero: a block resting on another's face, a block with one face flush with another's, a hole tangent to a wall, coaxial cylinders of equal radius, a sphere touching a face, a cylinder whose axis lies on an edge, and a solid built twice. The offset takes 15 values from zero to one micron and from there to one millimetre, in both directions |
+| Near-degenerate booleans | 2,100 pairs | Two primitives in a configuration that is degenerate when an offset is zero: a block resting on another's face, a block with one face flush with another's, a hole tangent to a wall, coaxial cylinders of equal radius, a sphere touching a face, a cylinder whose axis lies on an edge, and a solid built twice. The offset takes 15 values: zero, and every power of ten from 1e-9 mm (one picometre) to 1e-3 mm (one micrometre), in both directions |
 | Generic booleans | 600 pairs | Two random primitives (box, cylinder, sphere, cone, torus) in random positions and orientations |
 | Fillets | 3,000 cases | A primitive, or a boolean of two, with one sharp edge or all sharp edges rounded at 2%, 5% or 15% of the shortest sharp edge. 456 had no sharp edge and were skipped |
 | Feature sequences | 300 | A block with 12 booleans applied in turn (holes, pockets, bosses, ribs, spherical cuts), about half placed flush with existing faces or centred on them, followed by one fillet. This is the shape of a real feature tree |
@@ -20,7 +20,7 @@ No second kernel is used as a reference. Every input is an analytic primitive, s
 
 A result is counted as **error** if the kernel reported failure, **invalid** if it returned a solid that fails its own check, and **wrong** if it returned a valid-looking solid that misclassifies a point or is empty when it cannot be. Wrong is the worst outcome, because nothing tells the user.
 
-The closed-form inside tests were themselves validated against each kernel on the input primitives before use: 23,954 points with OCCT and 2,397 with SMLib, with no disagreement. `python -m ckb.validate` repeats this for any adapter; on 2026-11-11 it compared 80,861 points with OCCT and 67,679 with solidcore, again with no disagreement. solidcore's own point classification failed this test and is not used (see [RESULTS.md](RESULTS.md)).
+The closed-form inside tests were themselves validated against each kernel on the input primitives before use: 23,954 points with OCCT and 2,397 with SMLib, with no disagreement. `python -m ckb.validate` repeats this for any adapter; on 2026-11-11 it compared 80,861 points with OCCT and 67,679 with solidcore, and on 2026-11-12 80,862 with cadrs, again with no disagreement. It also compares each kernel's bounding boxes after placement with the exact boxes, computed in closed form. solidcore's own point classification failed this test and is not used (see [RESULTS.md](RESULTS.md)).
 
 Points a kernel declines to classify are counted per result as `undecided`, so a classifier that answers nothing cannot pass silently.
 
