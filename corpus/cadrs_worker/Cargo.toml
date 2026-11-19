@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
+# The corpus worker for cadrs's kernel (https://github.com/rvdende/cadrs, MIT OR Apache-2.0).
+# The path below is a cadrs checkout beside this repository; Cargo.lock is cadrs's own.
+[package]
+name = "cadrs-corpus"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+cadrs_kernel = { path = "../../../cadrs/crates/cadrs_kernel" }
+nalgebra = { version = "0.35", default-features = false, features = ["std"] }
+serde_json = "1"
+sha2 = "0.10"
+
+[profile.release]
+debug = false
