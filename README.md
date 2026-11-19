@@ -35,7 +35,7 @@ The two are meant to be read together.
 | [Corpora](corpus/README.md): every kernel over collections of real STEP parts; the [FreeCAD parts library](corpus/freecad-library/README.md), credited part by part | Working: OCCT and cadrs | 750 of 2,442 parts |
 | Feature sequences at depth, blends with proved existence, freeform booleans, throughput and determinism | Planned | |
 
-Kernel adapters: Open CASCADE (run), SMLib through NVIDIA's `usd-brep` (run), solidcore (written, **never run**).
+Kernel adapters, all run: Open CASCADE, SMLib through NVIDIA's `usd-brep`, solidcore (SolidCraft's kernel, through `solidcore_server`) and cadrs (through `cadrs_server`). Each one's results are in [docs/RESULTS.md](docs/RESULTS.md).
 
 ## Results so far
 
