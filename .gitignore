@@ -5,3 +5,4 @@ target/
 *.jsonl
 *.jsonl.part*
 !results/**/*.jsonl.gz
+!rounds/ledger.jsonl

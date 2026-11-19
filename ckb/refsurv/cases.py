@@ -18,6 +18,7 @@ import random
 import time
 
 from . import model as M
+from .. import rounds
 
 SIZES = [10, 50, 200]
 CLASSES = ["A", "B", "C", "D", "E", "F", "G", "H", "J"]
@@ -84,7 +85,7 @@ def feature(rng, uid, S, Lz, kind=None):
 def generate(c):
     """The case's model, its edits (one, or two for a round trip), and the
     uid of the feature the edit is about, if any."""
-    rng = random.Random(7_000_003 * c["id"] + 17)
+    rng = rounds.rng("refsurv-model", c["id"], 7_000_003 * c["id"] + 17)
     size, cls = c["size"], c["kind"]
     S, Lz = block_side(size), rng.uniform(30, 50)
     frame = {"R": M.rotation(rng), "o": [rng.uniform(-200, 200) for _ in range(3)]}
@@ -169,7 +170,7 @@ def references(c, before, after, focus):
     edit, one of its pieces, a point well inside that piece, and what is
     true of the identity afterwards. Identities whose piece count depends on
     the sampling are passed over and counted."""
-    rng = random.Random(9_000_011 * c["id"] + 5)
+    rng = rounds.rng("refsurv-refs", c["id"], 9_000_011 * c["id"] + 5)
     every = before.surfaces()
     rng.shuffle(every)
     first = [i for i in every if i[0] == focus]
