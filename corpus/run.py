@@ -29,11 +29,26 @@ WORKERS = {
 }
 
 
-def models(manifest, data):
-    """(id, path) of each model the manifest lists, in order."""
+def models(manifest, data, per_family=None):
+    """(id, path) of each model the manifest lists, in order. A manifest with a `status` column runs
+    only the rows marked include; with a `family` column and per_family, at most that many of each
+    family, the first by their hash, so a sample is the same on any machine."""
     with open(manifest) as f:
         rows = [line.rstrip("\n").split("\t") for line in f if not line.startswith("#")]
-    return [(r[0], os.path.join(data, r[1])) for r in rows[1:]]
+    head = rows[0]
+    rows = [dict(zip(head, r)) for r in rows[1:]]
+    if "status" in head:
+        rows = [r for r in rows if r["status"] == "include"]
+    if per_family and "family" in head:
+        key = "git_blob_sha1" if "git_blob_sha1" in head else "sha256"
+        kept, seen = [], {}
+        for r in sorted(rows, key=lambda r: r.get(key, r["model"])):
+            if seen.get(r["family"], 0) < per_family:
+                seen[r["family"]] = seen.get(r["family"], 0) + 1
+                kept.append(r)
+        keep = {r["model"] for r in kept}
+        rows = [r for r in rows if r["model"] in keep]
+    return [(r["model"], os.path.join(data, r["path"])) for r in rows]
 
 
 def run_one(cmd, model, path, timeout):
@@ -71,6 +86,7 @@ def main():
     ap.add_argument("--jobs", type=int, default=max(1, (os.cpu_count() or 2) - 2))
     ap.add_argument("--timeout", type=float, default=120)
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--per-family", type=int, help="at most this many models of each family")
     a = ap.parse_args()
     out = a.out
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
@@ -78,7 +94,7 @@ def main():
     if os.path.exists(out):
         with gzip.open(out, "rt") as f:
             done = {json.loads(line)["model"] for line in f if line.strip()}
-    todo = [(m, p) for m, p in models(a.manifest, os.path.expanduser(a.data)) if m not in done][: a.limit]
+    todo = [(m, p) for m, p in models(a.manifest, os.path.expanduser(a.data), a.per_family) if m not in done][: a.limit]
     print(f"{a.kernel} {os.path.basename(a.manifest)}: {len(done)} done, {len(todo)} to run", file=sys.stderr)
     cmd = WORKERS[a.kernel]()
     counts = {}

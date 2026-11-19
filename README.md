@@ -32,6 +32,7 @@ The two are meant to be read together.
 | Feature recognition | A generator of STEP parts with known features | 60 |
 | [Reference survival](docs/REFERENCE-SURVIVAL.md): after an upstream edit, does a stored reference to a face still find it? | Working for faces, on two OCCT-based naming schemes. No existing CAD product measured yet | 9 kinds of edit x models of 10, 50 and 200 features, 8 references each |
 | [Private rounds](docs/ROUNDS.md): the same families drawn from a secret key that is committed to beforehand and revealed with the results | Mechanism working; no round published yet | |
+| [Corpora](corpus/README.md): every kernel over collections of real STEP parts; the [FreeCAD parts library](corpus/freecad-library/README.md), credited part by part | Working: OCCT and cadrs | 750 of 2,442 parts |
 | Feature sequences at depth, blends with proved existence, freeform booleans, throughput and determinism | Planned | |
 
 Kernel adapters: Open CASCADE (run), SMLib through NVIDIA's `usd-brep` (run), solidcore (written, **never run**).
