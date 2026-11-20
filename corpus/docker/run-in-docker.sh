@@ -10,7 +10,7 @@ set -euo pipefail
 data=$(cd "$1" && pwd); manifest=$(cd "$(dirname "$2")" && pwd)/$(basename "$2"); results=$3; shift 3
 mkdir -p "$results"; results=$(cd "$results" && pwd)
 for k in occt cadrs; do
-  docker run --rm --network none --cpus "${CPUS:-3}" --memory "${MEMORY:-16g}" --pids-limit 1024 \
+  docker run --rm --user "$(id -u):$(id -g)" --network none --cpus "${CPUS:-3}" --memory "${MEMORY:-16g}" --pids-limit 1024 \
     --read-only --tmpfs /tmp:size=2g --security-opt no-new-privileges --cap-drop ALL \
     -v "$data":/data:ro -v "$manifest":/manifest.tsv:ro -v "$results":/results \
     ${IMAGE:-ckb-corpus} python corpus/run.py --kernel $k --manifest /manifest.tsv --data /data \
