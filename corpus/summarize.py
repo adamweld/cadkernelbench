@@ -35,7 +35,8 @@ def outcome(rec, op):
             continue
         if r["status"] != "ok":
             got.append(r["status"])
-        elif r.get("valid") is False or ("volume" in r and op != "mass" and not (0 < r["volume"] < 1e300)):
+        elif r.get("valid") is False or ("volume" in r and op != "mass" and not (
+                isinstance(r["volume"], (int, float)) and 0 < r["volume"] < 1e300)):  # None: no volume measured
             got.append("invalid")
         else:
             got.append("ok")
